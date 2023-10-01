@@ -14,16 +14,15 @@ using System.Web.Security;
 
 namespace PayMasta.Admin.Controllers
 {
+    /// <summary>
+    /// AccountController
+    /// </summary>
     public class AccountController : Controller
     {
         private IAccountService _accountService;
-        //private ICommonEmployerService _commonEmployerService;
-        //private IBankTransferService _bankTransferService;
-        //private IOkraService _okraService;
         private IThirdParty _thirdParty;
         public AccountController(IAccountService accountService, IThirdParty thirdParty)
         {
-            //  _logUtils = logUtils;
             _accountService = accountService;
             _thirdParty = thirdParty;
         }
