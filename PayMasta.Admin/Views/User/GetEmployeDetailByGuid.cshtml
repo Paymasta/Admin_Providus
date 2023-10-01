@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "Early Wage Access";
+}
+
+<script src="~/Content/js/UserProfile/ViewUserProfile.js"></script>
+<link href="~/Content/css/UserProfileCss/UserProfile.css" rel="stylesheet" />
+
+<div class="padding padding-top">
+    <div class="content-main-container">
+
+        <div class="personal-info-text">Personal Info</div>
+
+        <div class="personal-info-container row">
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">First Name</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="firstName"></div>
+                </div>
+                <div  class="user-profile-content-container">
+                    <div class="user-detail-content">Date of birth</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="DateOfBirth"></div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div  class="user-profile-content-container">
+                    <div class="user-detail-content">Last Name</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="lastName"></div>
+                </div>
+                <div  class="user-profile-content-container">
+                    <div class="user-detail-content">Gender</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="Gender"></div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Email ID</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="email"></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Phone Number</div>
+                    <span  class="user-detail-content text-bold font-weight-600 important-text" id="countryCode"></span>
+                    <span class="user-detail-content text-bold font-weight-600 important-text" id="phoneNumber"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="padding">
+    <div class="content-main-container">
+
+        <div class="personal-info-text">Address Details</div>
+
+        <div class="personal-info-container row">
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Home Address</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="Address"></div>
+                </div>
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Post Code</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="PostalCode"></div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6 user-profile-content-container">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Country</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="CountryName"></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">State</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="State"></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">City</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="City">Nigeria</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="padding">
+    <div class="content-main-container">
+
+        <div class="personal-info-text">Employer Info</div>
+
+        <div class="personal-info-container row">
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Employer Name</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="EmployerName"></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Staff ID</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="StaffId"></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Net Pay /  month</div>
+                    <div class="user-detail-content text-bold font-weight-600">₦<span id="NetPay">100,00</span></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Gross Pay / month</div>
+                    <div class="user-detail-content text-bold font-weight-600">₦<span id="GrossPay">150,00</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="padding">
+    <div class="content-main-container">
+
+        <div class="personal-info-text">Account Details</div>
+
+        <div class="personal-info-container row">
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Bank Name</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="BankName">Lorem Ipsum</div>
+                </div>
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Status</div>
+                    <div class="user-detail-content text-bold font-weight-600 status-info-text"><span id="Status"></span></div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Account Number</div>
+                    <div class="user-detail-content text-bold font-weight-600 important-text" id="AccountNumber"></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">BVN Number</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="BVN"></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6 float-right">
+                <div class="user-profile-content-container">
+                    <div class="user-detail-content">Bank Account Holder Name</div>
+                    <div class="user-detail-content text-bold font-weight-600" id="BankAccountHolderName"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="padding">
+    <div class="btn-container">
+        <div class="side-padding">
+            <div class="deactivate-btn personal-info-btn" id="block_btn" data-msg="deactivate">Deactivate</div>
+            <div class="deactivate-btn personal-info-btn" id="unblock_btn" data-msg="activate">Activate</div>
+        </div>
+
+        <div class="side-padding">
+            <div class="remove-btn personal-info-btn" id="remove_btn">Remove</div>
+        </div>
+
+        <div class="side-padding">
+            <div class="withdrawal-btn personal-info-btn" id="withdrawals_btn">Withdrawals</div>
+        </div>
+    </div>
+</div>

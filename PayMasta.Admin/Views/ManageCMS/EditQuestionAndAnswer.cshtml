@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Edit Question and Answer";
+}
+
+<style>
+    .btndatas {
+        border: 1px solid #F86847;
+        background-color: #F86847;
+        padding: 5px 20px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        text-align: center;
+        margin-left: 500px;
+    }
+</style>
+
+<script src="~/Content/js/CMS/ManageCms.js"></script>
+
+@*<div class="container" id="divQuestionAnswer">
+
+</div>*@
+
+<div>
+    <input type="hidden" id="txtfaqid">
+  
+    <div>
+        <h3>Question-:</h3>
+        <input type="text" id="txtQuestion" style="height:100px;width:100%" />
+    </div>
+  
+
+</div>
+<div id="divAnswer">
+    <h3>Answers-:</h3>
+</div>
+<div>
+    <button type="button" class="btndatas" id="btnSaveFaq">Edit</button>
+</div>

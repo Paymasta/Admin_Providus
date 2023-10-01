@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Early Wage Access";
+}
+
+
+
+<link rel="stylesheet" href="~/Content/css/WithdrawalCss/withdrawlsviewdetail.css">
+<link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+<link href="~/Content/css/Loader/Loader.css" rel="stylesheet" />
+<div class="loader" id="loader1"></div>
+<div class="empdata">
+    <div class="head">
+        <a href="@Url.Action("Index","Withdrawals")">
+            <img src="/Content/img/vuesax-linear-arrow-left.svg">
+        </a>
+
+        <div class="ltdata">Withdrawals /  <span class="rtdata">View Detail</span></div>
+    </div>
+    <div class="middata">
+        <div class="uppermiddata">
+            <img src="" class="avtar" id="imgProfilePic">
+            @*<img src="/Content/img/avatar.jpg" class="avtar">*@
+        <div class="cancel-transfer-btn-container">
+            <a class="btndatas1" href="@Url.Action("Index","Withdrawals")">
+                Cancel
+                @*<button class="btndatas1" id="btnCancel">Cancel</button>*@
+            </a>
+
+            <button type="button" class="btndatas" id="btnFundTransfer">Transfer</button>
+            <button type="button" class="btnReject" id="btnRejectFundTransfer">Reject</button>
+        </div>
+        </div>
+
+        <div class="row withdrawals-view-detail-main-container">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="withdrawals-details-heading">Username</div>
+                        <div class="withdrawals-details-heading">Mobile Number</div>
+                        <div class="withdrawals-details-heading">Total No. Of Working Hours</div>
+                        <div class="withdrawals-details-heading">Amount Requested</div>
+                        <div class="withdrawals-details-heading">Status</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="withdrawals-details-heading withdrawals-user-details" id="fullName"></div>
+                        <div class="withdrawals-details-heading withdrawals-user-details" id="mobile">8987272789</div>
+                        <div class="withdrawals-details-heading withdrawals-user-details" id="Hours"></div>
+                        <div class="withdrawals-details-heading withdrawals-user-details" id="AccessAmount"></div>
+                        <div class="withdrawals-details-heading withdrawals-user-details" id="employerStatus"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="withdrawals-details-heading">Email Address</div>
+                        <div class="withdrawals-details-heading">Employer Name</div>
+                        <div class="withdrawals-details-heading">Earned Wages</div>
+                        <div class="withdrawals-details-heading">Staff ID</div>
+                        <div class="withdrawals-details-heading">Current Available Amount</div>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="withdrawals-details-heading withdrawals-user-details" id="email"></div>
+                        <div class="withdrawals-details-heading withdrawals-user-details" id="employerName">Adobe</div>
+                        <div class="withdrawals-details-heading withdrawals-user-details" id="EarnedAmount"></div>
+                        <div class="withdrawals-details-heading withdrawals-user-details" id="staffid"></div>
+                        <div class="withdrawals-details-heading withdrawals-user-details" id="AvailableAmount"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/js/EWA/EWADetail.js"></script>

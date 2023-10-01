@@ -1,0 +1,35 @@
+﻿.centerBox {
+    top: 35%;
+}
+.pending {
+    color: #32A4FC;
+}
+
+.closed {
+    color: #50bd27;
+}
+
+.hold {
+    color: #FFC107;
+}
+
+.reject {
+    color: red;
+}
+
+.in_progress {
+    color: #63aac1;
+}
+
+td {
+    max-width: 100px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+.w-25 .descText, .w-25 .labelText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

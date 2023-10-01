@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "Notifications";
+}
+
+<link href="~/Content/css/early-wage-user.css" rel="stylesheet" />
+<script src="~/Content/js/Notifications/Notifications.js"></script>
+<style>
+    .btnCancel {
+        margin-bottom: 20px;
+    }
+
+    .manage-notification-checkobox-container {
+        display: block !important;
+        position: relative !important;
+        padding-left: 35px !important;
+        margin-bottom: 12px !important;
+        cursor: pointer !important;
+        font-size: 22px !important;
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+    }
+
+        /* Hide the browser's default checkbox */
+        .manage-notification-checkobox-container input {
+            position: absolute !important;
+            opacity: 0 !important;
+            cursor: pointer !important;
+            height: 0 !important;
+            width: 0 !important;
+        }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        height: 18px !important;
+        width: 18px !important;
+        background-color: #eee !important;
+        border-radius: 6px !important;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .manage-notification-checkobox-container:hover input ~ .checkmark {
+        background-color: #ccc !important;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .manage-notification-checkobox-container input:checked ~ .checkmark {
+        background-color: #F86847 !important;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "" !important;
+        position: absolute !important;
+        display: none !important;
+    }
+
+    /* Show the checkmark when checked */
+    .manage-notification-checkobox-container input:checked ~ .checkmark:after {
+        display: block !important;
+    }
+
+    /* Style the checkmark/indicator */
+    .manage-notification-checkobox-container .checkmark:after {
+        left: 7px !important;
+        top: 3.5px !important;
+        width: 3px !important;
+        height: 7px !important;
+        border: solid white !important;
+        border-width: 0 3px 3px 0 !important;
+        -webkit-transform: rotate(45deg) !important;
+        -ms-transform: rotate(45deg) !important;
+        transform: rotate(45deg) !important;
+    }
+
+    .checkbox {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+        .checkbox label {
+            padding-left: 0px;
+        }
+</style>
+<div class="main_div">
+    <div class="tab_data">
+        <div class="tab_data1">
+            <div class="main_transaction">
+                <div class="text">
+                    Manage Notification
+                </div>
+                <div class="sec_transaction">
+                    @*<div class="csvexport-container">
+                        <button type="button" class="csvexport" id="btnExportToCSV">Export To CSV</button>
+                    </div>*@
+                    <!-- <div class="search_icon">
+        <button class="paycycle">Upload User List</button>
+        <img class="search-arrow" src="./images/arrow-line.png" alt="">
+    </div> -->
+                    <div class="search_icon">
+                        <input type="search" placeholder="Search" class="search" id="notifySearch">
+                        <img class="search-img" src="~/Content/img/search-line.svg" />
+                    </div>
+                    <div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="over-flow">
+                <table id="notificationList" class="table-details">
+                    <thead>
+                        <tr>
+                            <th class="table-head">S.No</th>
+                            <th class="table-head">User Name</th>
+                            <th class="table-head">Email Id</th>
+                            <th class="table-head">Mobile Number</th>
+                            <th class="table-head">Employer Name</th>
+                            <th class="table-head">
+                                @*<div class="checkbox">
+                                        <label><input type="checkbox" value="" id="checkAll">  Select All</label>
+                                    </div>*@
+
+                                <input type="checkbox" value="" id="checkAll" class="">
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="userList_body">
+                        @*<tr>
+                                <td>Alex Deo</td>
+                                <td>alex.deo45@gmail.com</td>
+                                <td>+919876543210</td>
+                                <td>Adobe</td>
+
+                                <td>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value=""></label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Alex Deo</td>
+                                <td>alex.deo45@gmail.com</td>
+                                <td>+919876543210</td>
+                                <td>Adobe</td>
+
+                                <td>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value=""></label>
+                                    </div>
+                                </td>
+
+                            </tr>*@
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div class="card" id="noRecordFound">
+                <div class="card-body" style="text-align:center">
+                    No record found.
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="button" class="btnCancel btnSave py-2 text-light" id="btnSubmit">Submit</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="pagination">
+        <ul id="notification_pagination" class="pagination"></ul>
+        @*<div class="arrow_custom"><a href="#">&lt;</a></div>
+            <div id="paginationDiv"><a class="anch_tag" href="#">1</a></div>
+            <div class="arrow_custom"> <a href="#">&gt;</a></div>
+                    <ul class="list-group">
+            </ul>*@
+    </div>
+</div>
+
+

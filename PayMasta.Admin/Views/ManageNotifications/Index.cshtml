@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Notifications";
+}
+
+
+
+
+
+<link href="~/Content/css/Account/changepass.css" rel="stylesheet" />
+<script src="~/Content/js/Notifications/message.js"></script>
+
+<div class="mainBody">
+    <div class="position-relative d-inline-block create-pswd-input-container-height">
+        <label for="" class="position-absolute label">Description</label>
+        <div class="position-relative">
+
+
+            <textarea rows="10" class="create-pswd-input-text form-control" placeholder="Write here…" id="notifyMessage" maxlength="200"></textarea>
+            <span class="descNote">Note :- Only 200 characters are allowed</span>
+        </div>
+        <div>
+            <span id="txtPasswordChangeOldError" style="color: red; float: left;padding-top:4px" ;></span>
+        </div>
+        <div id="strengthMessage1"></div>
+    </div>
+    <div class="pt-5 text-center">
+        <!--<a href="@Url.Action("ManageNotification","ManageNotifications")" class="login-btn sendBth py-2 text-light">-->
+        @*<button type="button" class="login-btn sendBth py-2 text-light">Send</button>*@
+        <!--Send
+    </a>-->
+        <a href="javascript:void(0);" class="login-btn sendBth py-2 text-light" id="sendBtn">
+            Send
+        </a>
+    </div>
+</div>

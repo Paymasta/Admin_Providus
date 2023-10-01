@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "Early Wage Access";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/css/Employercss/user-salary.css">
+    <title>Page - 17</title>
+</head>
+
+<body>
+    <div class="main_div">
+
+        <ol class="employee-list-breadcrumb">
+            <li class="list-first-content"><a href="javascript:void(0);" id="backBtn"><img src="/Content/images/arrow-left.png" class="back-btn" /></a><a href="#">Employer</a></li>
+
+            <li><a href="#">Employer Detail</a></li>
+            <li><a href="#">View User List</a></li>
+            <li><a href="#">View User Profile</a></li>
+            <li><a href="#">View User Transaction Detail</a></li>
+            <li class="list-active">User Salary Structure</li>
+        </ol>
+
+        <div class="tab_data">
+            <div class="tab_data1">
+                <div class="main_transaction">
+                    <div class="text1">
+                        Salary Structure
+                    </div>
+                    <div class="date_option">
+                        <div class="date_from">
+                            From
+                            <input type="date" class="to_date">
+                        </div>
+                        <div class="date_from">
+                            To
+                            <input type="date" class="to_date">
+                        </div>
+                        <div>
+                            <button class="reset">Reset</button>
+                        </div>
+                        <div>
+                            <button class="filter">Filter</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="hour-limit">
+                    <div class="first-schedule">
+                        <img class="hour-img" src="~/Content/images/alarm-line.svg" alt="" />
+                        <div class="hour-worked">20 Hours Worked</div>
+                    </div>
+                    <div class="schedule">
+                        <div class="first-schedule">
+                            <img class="hour-img" src="~/Content/images/timer-2-line.svg" alt="">
+                            <span class="hour-schedule">10 Hours more Scheduled</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="table-overflow">
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Date</th>
+                            <th>Working Time (In Hours)</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>15/06/2022</td>
+                            <td>5:30</td>
+                            <td class="text-class">₦100,00</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>15/06/2022</td>
+                            <td>5:30</td>
+                            <td class="text-class">₦100,00</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>15/06/2022</td>
+                            <td>5:30</td>
+                            <td class="text-class">₦100,00</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>15/06/2022</td>
+                            <td>5:30</td>
+                            <td class="text-class">₦100,00</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>15/06/2022</td>
+                            <td>5:30</td>
+                            <td class="text-class">₦100,00</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>15/06/2022</td>
+                            <td>5:30</td>
+                            <td class="text-class">₦100,00</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>15/06/2022</td>
+                            <td>5:30</td>
+                            <td class="text-class">₦100,00</td>
+                        </tr>
+                        <tr>
+                            <td class="border-bottom-none">8</td>
+                            <td class="border-bottom-none">15/06/2022</td>
+                            <td class="border-bottom-none">5:30</td>
+                            <td class="text-class border-bottom-none">₦100,00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+<script>
+    $(document).on('click', '#backBtn', function () {
+        window.href = window.history.back();
+    });
+</script>
+
+</html>
+

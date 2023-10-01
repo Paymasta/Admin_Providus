@@ -1,0 +1,97 @@
+﻿<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<link href="~/Content/css/header/header.css" rel="stylesheet" />
+
+<header class="main-header">
+    @* BEGIN Logo PayMasta *@
+    <a href="@Url.Action("Index", "Home")" class="logo">
+        @* Mini logo for sidebar 50x50 pixels *@
+        <span class="logo-mini"> <img src="~/Content/img/PayMasta-Logo-sm.png" /></span>
+        @* Logo for regular state and mobile devices *@
+        @*        <span class="logo-lg"><img src="~/Content/img/header-logo.png" style="width: 72px; height: 40px; margin-top: 0px !important" /></span>
+        *@
+        <span class="logo-lg"><img src="~/Content/images/pay-master-logo.png" style="width: 72px; height: 40px; margin-top: 0px !important" /></span>
+
+    </a>
+    @* END Logo *@
+    @* BEGIN Header *@
+    <nav class="navbar navbar-static-top" role="navigation" style="background-color:white !important">
+        <a href="#" class="sidebar-toggle menu-icon" data-toggle="push-menu" role="button" style="text-decoration: none; color: #464646 !important">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+
+                @* END Tasks *@
+                @* BEGIN User Account Menu *@
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="" class="user-image" alt="User Image">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="mainBlock">
+                            <p class="mainTitle">Profile</p>
+                            <div class="closeIcon">
+                                <img src="~/Content/img/images/close.png" />
+                            </div>
+                        </li>
+                        <li class="profileBlock">
+                            <div class="leftBlock">
+                                <div class="backImg">
+                                    <img src="~/Content/img/images/profile.png" />
+                                </div>
+                                <div class="titleHead">
+                                    <a href="@Url.Action("AdminProfile","Home")">My Profile</a>
+                                </div>
+                            </div>
+                            @*<div>
+                                    <img src="~/Content/img/images/rightarrow.png" />
+                                </div>*@
+                        </li>
+                        <li>
+                            <div class="backImg">
+                                <img src="~/Content/img/images/setting.png" />
+                            </div>
+                            <div class="titleHead">
+                                <a href="@Url.Action("ChangePassword","Account")">Change Password</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="backImg">
+                                <img src="~/Content/img/images/logout.png" />
+                            </div>
+                            <p class="titleHead" id="btnAdminLogout">
+                                <a>Logout</a>
+                            </p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+
+<div class="modal fade" id="logoutModel" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content logoutBody">
+
+            <div class="modal-header">
+                <div class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </div>
+            </div>
+            <div class="modal-body ">
+                <div class="mainBody">
+                    <p class="logoutTitle">Are you sure you want to logout?</p>
+                    <button type="button" class="btnLogout" id="btnLogout">Logout</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Content/js/Header/Header.js"></script>
+

@@ -1,0 +1,103 @@
+﻿
+@using WebHelpers.Mvc5
+<link href="~/Content/css/SidebarCss/Sidebar.css" rel="stylesheet" />
+<aside class="main-sidebar" style="background-color:white !important">
+    <section class="sidebar">
+        @* BEGIN Search *@
+        @*<form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>*@
+        @* END Search *@
+        @* BEGIN Menu *@
+        <ul class="sidebar-menu" data-widget="tree">
+            @*<li class="header">HEADER</li>*@
+            <li class="@Url.IsLinkActive("Index", "Home")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> <span>Dashboard</span></a>
+            </li>
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-credit-card-alt"></i> <span>Early Wage Access</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.IsLinkActive("Index", "Employers")">
+                        <a href="@Url.Action("Index", "Employers")">Employers</a>
+                    </li>
+                    <li class="@Url.IsLinkActive("Index", "User")"><a href="@Url.Action("Index", "User")">Employees</a></li>
+                    <li class="@Url.IsLinkActive("Index", "Withdrawals")"><a href="@Url.Action("Index", "Withdrawals")">Withdrawals</a></li>
+                    <li class="@Url.IsLinkActive("Index", "Transactions")"><a href="@Url.Action("Index", "Transactions")">Transactions</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-handshake-o"></i> <span>Manage Request</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.IsLinkActive("Index", "UpdateProfileRequest")"><a href="@Url.Action("Index", "UpdateProfileRequest")">Update Profile Request</a></li>
+                    <li class="@Url.IsLinkActive("Index", "Support")"><a href="@Url.Action("Index", "Support")">Support</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-book"></i> <span>Bill And Payments </span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.IsLinkActive("Index", "ManageCategory")"><a href="@Url.Action("Index", "ManageCategory")">Manage Category</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-bell"></i> <span>Notifications </span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.IsLinkActive("Index", "ManageNotifications")"><a href="@Url.Action("Index", "ManageNotifications")">Manage Notifications</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-volume-control-phone"></i> <span>CMS </span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.IsLinkActive("Index", "ManageCMS")"><a href="@Url.Action("Index", "ManageCMS")">Manage CMS</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-volume-control-phone"></i> <span>Manage Article </span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.IsLinkActive("Index", "ManageArticle")"><a href="@Url.Action("Index", "ManageArticle")">Manage Article</a></li>
+                </ul>
+            </li>
+        </ul>
+        @* END Menu *@
+    </section>
+</aside>

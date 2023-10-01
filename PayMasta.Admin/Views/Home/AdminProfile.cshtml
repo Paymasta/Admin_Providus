@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "My Profile";
+}
+
+
+<link rel="stylesheet" href="~/Content/css/Account/updateProfile.css" />
+<div class="container-inner">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+            @*<div class="mainImg">
+            <img class="profileImg" src="~/Content/img/images/man-placeholder.png" id="test" />
+
+            <img class="admin-cam-img" src="~/Content/images/camera-img.svg" data-toggle="modal" data-target="#uploadProfileModal" />
+
+        </div>*@
+            <div class="mainImg">
+                <img src="" alt="" class="profile-pic" id="test" />
+
+                <img src="~/Content/images/camera-img.svg" alt="" class="admin-cam-img" data-toggle="modal" data-target="#uploadProfileModal">
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mt-50">
+            <form>
+                <div class="proData" id="pronnameDiv">
+                    <label class="proTitle">Name</label>
+                    <input type="text" class="proDesc" id="proName" pattern="^[A-Za-z -]+$" maxlength="50" />
+                </div>
+            </form>
+            <div class="proData">
+                <label class="proTitle">Mobile Number</label>
+                <p class="proDesc" id="proPhoneNumber"></p>
+            </div>
+
+
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mt-50 ">
+
+            <div class="proData">
+                <label class="proTitle">Email Address</label>
+                <p class="proDesc" id="proEmail"></p>
+            </div>
+            <div class="proData">
+                <label class="proTitle">Wallet Balance</label>
+                <p class="proDesc" id="proWalletBalance"></p>
+            </div>
+            @*<div class="proData">
+            <label class="proTitle">Country</label>
+            <p class="proDesc" id="proCountry"></p>
+        </div>*@
+
+
+        </div>
+    </div>
+    <div class="row mt-50">
+        <div class="col-lg-3 col-md-4 col-sm-6  col-xs-6 col-lg-offset-3  col-md-offset-4 col-sm-offset-0">
+            <button class="btnCancel" style="padding: 10px" id="btnCancel">Cancel</button>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6  col-xs-6">
+            <button class="btnCancel btnSave " id="btnSave" style="padding: 10px">Save</button>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="profile_old_name" />
+
+@*modal upload image*@
+<div>
+    <div class="modal" id="uploadProfileModal">
+        <div class="modal-dialog ">
+            <div class="modal-content ">
+                <div class=" body-content">
+                    <div class=" heading-container">
+                        <div class="heading ">Change Profile Picture</div>
+                        <img class="img-pic" src="~/Content/images/close_prof_img.png" data-dismiss="modal" alt="" width="19px" height="19px">
+                    </div>
+                    <div class=" changeprofileimg  upload-button">
+                        <label for="profile-pic" class="profile-upload-img"> <img src="~/Content/images/changeprofile.svg" /></label>
+                        <input type="file" id="profile-pic" name="myfile" style="display: none;" class="file-upload">
+                    </div>
+                    <button type="button" class="upload-btn" name="Save" id="btnSaveImage">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/js/Account/Myprofile.js"></script>
+<script>
+    $(function () {
+        $('.selectpicker').selectpicker();
+    });
+</script>

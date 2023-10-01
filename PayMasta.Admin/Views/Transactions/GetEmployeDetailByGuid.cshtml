@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "Early Wage Access";
+}
+
+<link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/css/TransactionsCss/view-user-transaction-detail.css">
+<script src="~/Content/js/Transactions/view-user-transaction-detail.js"></script>
+<title>Page - 31</title>
+
+    <div class="main_div">
+        <div class="sec_div">
+            <div class="padding-bottom">
+                <div class="employer-detail-month-main-container">
+                    <ol class="employee-list-breadcrumb">
+                       
+                        <li><img src="/Content/img/arrow-left.png" class="back-btn" id="backBtn"/><a href="@Url.Action("Index","Transactions")">Employees</a></li>
+                        @*<li><a href="#">Employer Detail</a></li>*@
+                        <li class="list-active">View User Transaction Details</li>
+                    </ol>
+                    <div class="month-container">
+                        <span>Month</span>
+                        <select name="month_filter" id="month_filter">
+                            <option value="0">Select</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                   
+
+                </div>
+               @* <ol class="employee-list-breadcrumb">
+                    <li><img src="/Content/img/arrow-left.png" class="back-btn" /><a href="#">Employer</a></li>
+                    <li><a href="#">Employer Detail</a></li>
+                    <li class="list-active">View User Transaction Details</li>
+                </ol>
+                <select name="month_filter" id="month_filter">
+                    <option value="0">Select</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+*@                <div class="content-main-container">
+                    <div class="personal-info-container row">
+                        <div class="col-smallest-screen col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <div class="row">
+                                <div class="content col-xs-3 col-sm-6 col-md-6">User Name</div>
+                                <div class="content text-bold col-xs-3 col-sm-3 col-md-6" id="user_name"></div>
+                            </div>
+                            <div class="row">
+                                <div class="content col-xs-3 col-sm-6 col-md-6">Mobile Number</div>
+                                <div class="content text-bold col-xs-3 col-sm-3 col-md-6" id="mobile_no"></div>
+                            </div>
+                            <div class="row">
+                                <div class="content col-xs-3 col-sm-6 col-md-6">Total No. Of working days</div>
+                                <div class="content text-bold col-xs-3 col-sm-3 col-md-6" id="working_hours"></div>
+                            </div>
+                            <div class="row">
+                                <div class="content col-xs-3 col-sm-6 col-md-6">Current Available Amount</div>
+                                <div class="content text-bold col-xs-3 col-sm-3 col-md-6" id="current_available_amount"></div>
+                            </div>
+                        </div>
+                        <div class="col-smallest-screen col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <div class="row">
+                                <div class="content col-xs-3 col-sm-6 col-md-6">Email Address</div>
+                                <div class="content text-bold col-xs-3 col-sm-6 col-md-6" id="email_address"></div>
+                            </div>
+                            <div class="row">
+                                <div class="content col-xs-3 col-sm-6 col-md-6">Employer Name</div>
+                                <div class="content text-bold col-xs-3 col-sm-6 col-md-6" id="employer_name"></div>
+                            </div>
+                            <div class="row">
+                                <div class="content col-xs-3 col-sm-6 col-md-6">Earned Wages</div>
+                                <div class="content text-bold col-xs-3 col-sm-6 col-md-6" id="earned_wages"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab_data">
+                <div class="tab_data1">
+                    <div class="over-flow">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Amount Paid</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transViewList_body">
+                               
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div class="card" id="trans-view-no-record">
+                        <div class="card-body" style="text-align:center">
+                            No record found.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pagination">
+                <ul id="trans_view_pagination" class="pagination"></ul>
+            </div>
+
+        </div>
+    </div>
+
+

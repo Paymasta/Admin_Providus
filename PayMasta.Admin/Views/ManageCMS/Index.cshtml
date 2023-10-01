@@ -1,0 +1,296 @@
+﻿
+@{
+    ViewBag.Title = "Manage CMS";
+
+}
+
+<link href="~/Content/css/texteditorCss/TextEditor.css" rel="stylesheet" />
+<script src="~/Content/js/CMS/Cms.js"></script>
+
+<div class="tab">
+
+    <button class="tablinks active" onclick="opentab(event, 'TandC')">T&C</button>
+    <button class="tablinks" onclick="opentab(event, 'PrivacyPolicy')">Privacy Policy</button>
+    <button class="tablinks " id="btnFaq" onclick="opentab(event, 'Faq')">FAQ</button>
+    @*<button class="tablinks" onclick="opentab(event, 'Aboutus')">About us</button>*@
+</div>
+<div class="faq-btn-container">
+    <button data-toggle="modal" data-target="#faqQuestionmodal" class="faq-btn">Add Questions</button>
+    <button data-toggle="modal" data-target="#faqAnswerModal" class="faq-btn">Add Answers</button>
+</div>
+<div id="Faq" class="tabcontent">
+    <div class="tab_data">
+        <div class="tab_data1">
+            <div class="over-flow">
+                <table id="employerList" class="table-details">
+                    <thead>
+                        <tr>
+                            <th class="table-head">S.No</th>
+                            <th class="table-head">Question</th>
+                            <th class="table-head">Answer</th>
+                            <th class="table-head">Date</th>
+                            <th class="table-head">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="questionList">
+                        @*<tr>
+                        <td>1</td>
+                        <td>Appventurez</td>
+                        <td>abc@appventurez.com</td>
+                        <td>2/07/2022</td>
+                        <td>
+                            <img class="img-eye" src="Content/img/view_eye_icon.svg" alt="" data-toggle="tooltip" title="View Profile" />
+                            <img class="img-eye" src="Content/img/delete.png" alt="" data-toggle="tooltip" title="Delete" />
+                            <img class="img-eye" src="Content/img/close.png" alt="" data-toggle="tooltip" title="Block" />
+                        </td>
+                    </tr>*@
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div class="card" id="noRecordFound">
+                <div class="card-body" style="text-align:center">
+                    No record found.
+                </div>
+            </div>
+            <div class="pagination">
+                <ul id="trans_pagination" class="pagination"></ul>
+            </div>
+        </div>
+    </div>
+    @*<div>
+            <div class="cms-save-btn-container">
+                <button type="button" id="btnFaqSaveQuestions">Add Questions</button>
+            </div>
+            <div>
+                <input type="text" id="txtfaqQuestion" placeholder="Please enter question" />
+            </div>
+
+            <div>
+                <select id="ddlQuestions">
+                    <option>select</option>
+                </select>
+                <input type="text" id="txtfaqQuestionAnswer" placeholder="Please enter answer" />
+            </div>
+            <div class="cms-save-btn-container">
+                <button type="button" id="btnFaqSaveAnswer">Add Answer</button>
+            </div>
+
+        </div>*@
+</div>
+
+<div id="TandC" class="tabcontent">
+    <div>
+        <textarea id="summernoteTandC"></textarea>
+    </div>
+    <div class="cms-save-btn-container">
+        <button type="button" id="btnTandCSave">Save</button>
+    </div>
+</div>
+
+<div id="PrivacyPolicy" class="tabcontent">
+    <div>
+        <textarea id="summernotePrivacyPolicy"></textarea>
+    </div>
+    <div class="cms-save-btn-container">
+        <button type="button" id="btnPrivacyPolicySave">Save</button>
+    </div>
+</div>
+
+
+<div>
+    <div class="modal fade" id="faqQuestionmodal" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="">
+                    <div class="modal-body create-pswd-grid-container">
+                        <div class="signup-close-btn-container text-end pt-4 px-4">
+                            <div type="button" class="btn-close" data-dismiss="modal">
+                                <img src="~/Content/images/close.png" />
+                            </div>
+                        </div>
+                        <div class=" create-pswd-body-content">
+                            <div class="mainBody">
+                                <div class="heading">Add Questions</div>
+                                <div class="">
+                                    <div class="create-pswd-input-container-height">
+                                        <label for="" class="label">Add Questions</label>
+                                        <div class="position-relative">
+                                            <input type="text" id="txtfaqQuestion" class="create-pswd-input-text form-control" placeholder="Please enter question" />
+
+                                        </div>
+                                        <div>
+                                            <span id="spntxtForgetPasswordError" style="color: red;  padding-top: 4px" ;></span>
+                                        </div>
+                                        <div id="strengthMessage1" style="color: red; padding-top:-1px" ;></div>
+                                    </div>
+                                    <button type="button" id="btnFaqSaveQuestions" class="login-btn py-2 text-light">Add Questions</button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="modal fade" id="faqAnswerModal" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="">
+                    <div class="modal-body create-pswd-grid-container">
+                        <div class="signup-close-btn-container text-end pt-4 px-4">
+                            <div class="btn-close" data-dismiss="modal">
+                                <img src="~/Content/images/close.png" />
+                            </div>
+                        </div>
+                        <div class="create-pswd-body-content">
+                            <div class="mainBody">
+                                <div class="heading">Add Answers</div>
+                                <div class="">
+                                    <div class="create-pswd-input-container-height">
+                                        <label for="" class="label">Add Questions</label>
+                                        <div class="position-relative">
+                                            <div class="create-pswd-input-container-height">
+                                                <select id="ddlQuestions" class="create-pswd-input-text width-100">
+                                                    <option>Select</option>
+                                                </select>
+                                            </div>
+                                            <div class="create-pswd-input-container-height">
+                                                <label for="" class="label">Add Answers</label>
+                                                <div class="position-relative">
+                                                    <input type="text" id="txtfaqQuestionAnswer" class="create-pswd-input-text form-control" placeholder="Please enter answer" />
+                                                </div>
+                                                <div>
+                                                    <span id="spntxtForgetPasswordError" style="color: red;  padding-top: 4px" ;></span>
+                                                </div>
+                                                <div id="strengthMessage1" style="color: red; padding-top:-1px" ;></div>
+                                            </div>
+
+                                        </div>
+                                        <div>
+                                            <span id="spntxtForgetPasswordError" style="color: red;  padding-top: 4px" ;></span>
+                                        </div>
+                                        <div id="strengthMessage1" style="color: red; padding-top:-1px" ;></div>
+                                    </div>
+
+                                    <div class="create-pswd-input-container-height">
+
+                                        <div>
+                                            <span id="spntxtForgetPasswordError" style="color: red;  padding-top: 4px" ;></span>
+                                        </div>
+                                        <div id="strengthMessage1" style="color: red; padding-top:-1px" ;></div>
+                                    </div>
+                                    <button type="button" id="btnFaqSaveAnswer" class="login-btn py-2 text-light">Add Answer</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        //opentab("", 'Faq');
+        //$('#summernoteFaq').summernote(
+        //    {
+        //        placeholder: 'FAQ',
+        //        //tabsize: 4,
+        //        height: 320,
+
+        //    }
+        //);
+
+        $('#summernoteTandC').summernote(
+            {
+                placeholder: 'Please enter term and condition',
+                spellCheck: false,
+                //tabsize: 4,
+                height: 320,
+                focus: true,
+                //toolbar: [
+                //    ['style', ['style']],
+                //    ['font', ['bold', 'underline', 'clear','size']],
+                //    ['color', ['color']],
+                //    ['para', ['ul', 'ol', 'paragraph']],
+                //    ['table', ['table']],
+                //    ['insert', ['link', 'picture', 'video']],
+                //    ['view', ['fullscreen', 'codeview', 'help']]
+                // ]
+            }
+        );
+
+
+        $('#summernotePrivacyPolicy').summernote(
+            {
+                placeholder: 'Please enter privacy policy',
+                spellCheck: false,
+                //tabsize: 4,
+                height: 320,
+                //toolbar: [
+                //    ['style', ['style']],
+                //    ['font', ['bold', 'underline', 'clear','size']],
+                //    ['color', ['color']],
+                //    ['para', ['ul', 'ol', 'paragraph']],
+                //    ['table', ['table']],
+                //    ['insert', ['link', 'picture', 'video']],
+                //    ['view', ['fullscreen', 'codeview', 'help']]
+                //]
+            }
+        );
+        $('#summernoteAboutus').summernote(
+            {
+                placeholder: 'Please enter about us',
+                //tabsize: 4,
+                height: 320,
+                spellCheck: false,
+                //toolbar: [
+                //    ['style', ['style']],
+                //    ['font', ['bold', 'underline', 'clear','size']],
+                //    ['color', ['color']],
+                //    ['para', ['ul', 'ol', 'paragraph']],
+                //    ['table', ['table']],
+                //    ['insert', ['link', 'picture', 'video']],
+                //    ['view', ['fullscreen', 'codeview', 'help']]
+                //]
+            }
+        );
+        // $("#btnFaq").trigger("click");
+    });
+
+
+    function opentab(evt, tabName) {
+
+        if (tabName === "TandC" || tabName === "PrivacyPolicy") {
+            $(".faq-btn").hide();
+        } else {
+            $(".faq-btn").show();
+        }
+
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>

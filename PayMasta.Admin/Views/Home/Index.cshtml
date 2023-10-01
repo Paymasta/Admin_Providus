@@ -1,0 +1,194 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+@*<link rel="stylesheet" href="./bootstrap.min.css">*@
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/css/dashbaord/dashbaord.css" rel="stylesheet" />
+<script src="~/Content/js/Dashboard/dashboard.js"></script>
+
+<div class="padding">
+    <div class="drop_down">
+
+
+        <div class="styled-select">
+            <select property="voucherCategoryClass" id="ddlMonth">
+                <option value="0">Month </option>
+                <option value="1">January </option>
+                <option value="2">February </option>
+                <option value="3">March </option>
+                <option value="4">April </option>
+                <option value="5">May </option>
+                <option value="6">June </option>
+                <option value="7">July </option>
+                <option value="8">August </option>
+                <option value="9">September </option>
+                <option value="10">October </option>
+                <option value="11">November </option>
+                <option value="12">December </option>
+            </select>
+        </div>
+
+
+
+        <div class="date_option">
+            <div class="date_from">
+                <span>From</span>
+                <span style="position: relative" >
+                    <input type="text" class="to_date" placeholder="MM/DD/YYYY" id="txtFromDate">
+                    <i class="fa fa-calendar-check-o calender" aria-hidden="true" id="calender_from"></i>
+                </span>
+                <div>
+                    <span id="fromdateError" style="color:red"></span>
+                </div>
+
+            </div>
+
+            <div class="date_from">
+                <span>TO</span>
+                <span style="position: relative" >
+                    <input type="text" class="to_date" placeholder="MM/DD/YYYY" id="txtEnddate">
+                    <i class="fa fa-calendar-check-o calender" aria-hidden="true" id="calender_to"></i>
+                </span>
+                <div>
+                    <span id="TodateError" style="color:red"></span>
+                </div>
+
+            </div>
+
+            @*<div class="date_from">
+                    To
+                    <input type="text" class="to_date" id="txtEnddate" placeholder="select date">
+                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <span id="TodateError" style="color:red"></span>
+                </div>*@
+            <div>
+                <button class="reset" id="btnReset">Reset</button>
+            </div>
+            <div>
+                <button class="filter" id="btnFilter">Fliter</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- dashbaord box detail -->
+
+    <div class="mainBox">
+
+        <div class="dashBox">
+            <div class="boxDsah">
+                <div class="leftBox">
+                    <img src="~/Content/img/images/employees.png" />
+                </div>
+                <div class="rightContent">
+                    <h2 class="boxNo" id="total_employees"></h2>
+                    <p class="boxTitle">Total Employees</p>
+                </div>
+
+            </div>
+
+            <div class="boxDsah">
+                <div class="leftBox">
+                    <img src="~/Content/img/images/employees.png" />
+                </div>
+                <div class="rightContent">
+                    <h2 class="boxNo" id="total_employer"></h2>
+                    <p class="boxTitle">Total Employer</p>
+                </div>
+
+            </div>
+            <div class="boxDsah">
+                <div class="leftBox">
+                    <img src="~/Content/img/images/user.png" />
+                </div>
+                <div class="rightContent">
+                    <h2 class="boxNo" id="total_users"></h2>
+                    <p class="boxTitle">Total Users</p>
+                </div>
+
+            </div>
+            <div class="boxDsah">
+                <div class="leftBox">
+                    <img src="~/Content/img/images/updating.png" />
+
+                </div>
+                <div class="rightContent">
+                    <h2 class="boxNo" id="total_update_pro_req"></h2>
+                    <p class="boxTitle">Total Update Profile Requests</p>
+                </div>
+
+            </div>
+
+            <div class="boxDsah">
+                <div class="leftBox">
+                    <img src="~/Content/img/images/transaction.png" />
+                </div>
+                <div class="rightContent">
+                    <h2 class="boxNo" id="total_transactions"></h2>
+                    <p class="boxTitle">Total Transactions</p>
+                </div>
+
+            </div>
+
+            <div class="boxDsah">
+                <div class="leftBox">
+                    <img src="~/Content/img/images/withdrawal-request.png" />
+                </div>
+                <div class="rightContent">
+                    <h2 class="boxNo" id="total_withdraw_req"></h2>
+                    <p class="boxTitle">Total Withdrawal Requests</p>
+                </div>
+
+            </div>
+
+            <div class="boxDsah">
+                <div class="leftBox">
+                    <img src="~/Content/img/images/phone.png" />
+                </div>
+                <div class="rightContent">
+                    <h2 class="boxNo" id="total_queries"></h2>
+                    <p class="boxTitle">Total Querries</p>
+                </div>
+
+            </div>
+            <div class="boxDsah">
+                <div class="leftBox">
+                    <img src="~/Content/img/images/transaction.png" />
+                </div>
+                <div class="rightContent">
+
+                    <h2 class="boxNo" id="total_Earnings"></h2>
+                    <p class="boxTitle">Total Earning</p>
+                </div>
+
+            </div>
+            <div class="boxDsah">
+                <div class="leftBox">
+                    <img src="~/Content/img/images/transaction.png" />
+                </div>
+                <div class="rightContent">
+
+                    <h2 class="boxNo" id="total_EWASent"></h2>
+                    <p class="boxTitle">Total EWA Sent</p>
+                </div>
+
+            </div>
+            <div class="boxDsah">
+                <div class="leftBox">
+                    <img src="~/Content/img/images/transaction.png" />
+                </div>
+                <div class="rightContent">
+
+                    <h2 class="boxNo" id="total_EWAEarnings"></h2>
+                    <p class="boxTitle">Total EWA Earning</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

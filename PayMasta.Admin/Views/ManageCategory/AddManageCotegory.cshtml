@@ -1,0 +1,109 @@
+﻿
+@{
+    @*ViewBag.Title = "AddManageCotegory";*@
+}
+
+
+
+<style>
+    .centerBox {
+        top: 35%;
+    }
+
+    .manageBox .leftTitle, .manageBox .desc {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .manageCategory .manageBox .desc {
+        color: #130F26;
+        font: 600 16px/22px OpenSans-SemiBold;
+        width: calc(100% - 180px);
+        margin-bottom: 0px;
+        border: none;
+    }
+
+    .manageCategory .manageBox .proDesc {
+        max-width: 380px;
+        padding: 0px;
+        border: none;
+        border-bottom: 1px solid lightgrey;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+  
+
+    
+</style>
+<script src="~/Content/js/ManageRequest/addCategory.js"></script>
+<div class="backButton">
+    <img class="" src="~/Content/images/arrow-left.png" id="backImng"/>
+    Manage Category / <span class="viewDesc">Add </span>
+</div>
+
+<div class="manageCategory">
+    <div class="manageBox d-flex">
+        <div class="col-xs-2 col-sm-2 col-md-2 leftTitle">Category</div>
+        <input type="text" class="proDesc col-xs-12 col-sm-6 col-md-6" id="catName" maxlength="30" />
+    </div>
+
+    <div class="manageBox d-flex">
+        <div class="col-xs-2 col-sm-2 col-md-2 leftTitle">Sub-Category</div>
+        <input type="text" class="proDesc col-xs-12 col-sm-6 col-md-6" id="sub_catName" maxlength="30" />
+    </div>
+
+   @* <div class="manageBox d-flex">
+        <p class="leftTitle">Sub-Category</p>
+        <input type="text" class="proDesc" id="sub_catName" maxlength="30" />
+    </div>*@
+
+    <div class="manageBox flexAlign">
+        <!--<div class="camBack">
+            <img class="cameraImg" src="~/Content/img/images/cameraIcon.png" />-->
+            @* <div class="deleteBox">
+                    <img class="deleteImg" src="~/Content/img/images/deleteIcon.png" />
+                </div>*@
+        <!--</div>-->
+        @*<div class="camBack">
+                <img class="cameraImg" src="~/Content/img/images/cameraIcon.png" />
+            </div>*@
+        <div class="">
+            <button class="btnEdit btnDelete btnSecond" id="btnCancel">Cancel</button>
+            <button class="btnEdit btnSecond" data-toggle="modal" data-target="#saveChanges" id="savepopBtn" disabled>Save</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+
+
+<div class="modal fade" id="saveChanges" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered centerBox" role="document">
+
+        <!-- Modal content-->
+        <div class="modal-content logoutBody">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div class="popupBody">
+                    <p class="popTitle">Are you sure you want to save the category?</p>
+                    <div class="flexCenter">
+                        <button class="btnEdit" id="btnSave">Save</button>
+                        <button class="btnEdit btnDelete" id="btnCancel">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->

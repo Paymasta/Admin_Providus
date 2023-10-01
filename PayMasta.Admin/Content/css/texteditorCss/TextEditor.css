@@ -1,0 +1,335 @@
+﻿body {
+    font-family: Arial;
+}
+
+.table-details {
+    font-family: arial, sans-serif;
+    border-collapse: separate;
+    width: 100%;
+    border-spacing: 0 5px;
+}
+
+th:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+th:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+
+.table-head {
+    background-color: #32A4FC;
+}
+
+.table-details td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+.table-details th {
+    color: #ffffff;
+    white-space: nowrap;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.table-details td {
+    max-width: 130px;
+    color: #130F26;
+    font: 600 14px/19px OpenSans-SemiBold;
+    border-bottom: 0.3px solid #dddddd;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.table-details tr:nth-last-child(1) td {
+    border-bottom: 0;
+}
+
+
+.border-bottom-none {
+    border-bottom: 0px;
+}
+
+.status-text {
+    color: #130F26;
+    font: 600 16px/22px OpenSans-SemiBold;
+}
+
+.main_transaction {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.sec_transaction {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.paycycle {
+    background-color: #006DC1;
+    width: 145px;
+    border: none;
+    padding: 11px;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0px 10px;
+    padding-left: 17px;
+}
+
+.main_div {
+    width: 100%;
+}
+
+.tab_data {
+    background-color: #fff;
+    padding: 5px 24px;
+    border-radius: 16px;
+}
+
+.over-flow {
+    overflow: auto;
+}
+
+.text {
+    margin-top: 3px;
+    color: #464646;
+    font-size: 18px;
+    font: 600 18px/24px OpenSans-SemiBold;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: end;
+    margin: 10px 0px px 10px 0px;
+}
+
+    .pagination li:hover {
+        cursor: pointer;
+    }
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 4px 10px;
+        text-decoration: none;
+    }
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #ecf0f5;
+}
+
+    /* Style the buttons inside the tab */
+    .tab button {
+        background-color: inherit;
+        color: #464646;
+        font-weight: 600;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 16px;
+        transition: 0.3s;
+        font-size: 14px;
+    }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+            border-radius: 4px;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #32A4FC;
+            color: white;
+            border-radius: 4px;
+        }
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding-top: 6px;
+}
+
+.cms-save-btn-container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+    .cms-save-btn-container button {
+        padding: 8px 24px;
+        background: #F86847;
+        border: 1px solid #F86847;
+        border-radius: 10px;
+        color: #FFFFFF;
+    }
+/*----------modal css*/
+
+.modal-body {
+    padding: 0rem !important;
+}
+
+.heading {
+    padding-bottom: 24px;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+}
+
+.sub-heading {
+    color: #464646;
+    opacity: 0.5;
+    font-size: 14px;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+.create-pswd-input-text {
+    padding-left: 10px;
+    height: 54px;
+    / UI Properties / background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #797979;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.label {
+    padding: 0px 2px;
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    background-color: white;
+    font-size: 12px;
+    z-index: 1;
+    color: #130F26;
+}
+
+.create-pswd-input-container-height {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.faq-btn-container {
+    display: flex;
+    justify-content: end;
+    grid-gap: 10px;
+    padding: 24px 0px;
+}
+
+.faq-btn {
+    padding: 8px;
+    background: #F86847;
+    color: #FFFFFF;
+    border: 1px solid #F86847;
+    border-radius: 6px;
+}
+
+.create-pswd-body-content {
+    max-width: 345px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 10px;
+}
+
+
+/*.create-pswd-grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+}*/
+
+.create-pswd-background {
+    height: 100%;
+    display: none;
+    background-color: #32A4FC;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+
+.abc {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.sub-content {
+    font-size: 13px;
+}
+
+.signup-close-btn-container {
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.create-pswd-signup-btn {
+    padding: 6px 32px;
+    background-color: #32A4FC;
+    border-radius: 10px;
+    font-size: 12px;
+    border: 2px solid #FFFFFF;
+}
+
+.login-btn {
+    padding: 8px;
+    width: 100%;
+    background: #F86847;
+    color: #FFFFFF;
+    border: 1px solid #F86847;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.forget-pswd {
+    width: 290px;
+    color: #32A4FC;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-dialog {
+    width: 100%;
+    padding: 0px 10px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) !important;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        width: 450px !important;
+    }
+}

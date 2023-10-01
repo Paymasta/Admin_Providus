@@ -1,0 +1,182 @@
+﻿@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url('../../fonts/OpenSans-SemiBold.ttf') format('truetype');
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset !important;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mainBody {
+    max-width: 700px;
+    width: 100%;
+    padding: 24px 0px;
+}
+
+
+
+.create-pswd-body-content {
+    padding: 100px 0
+}
+
+.sub-heading {
+    color: #464646;
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+.create-pswd-input-container-height {
+    margin-bottom: 35px;
+}
+
+.create-pswd-input-text {
+    height: 54px;
+    padding-left: 10px;
+    border: 1px solid #797979;
+    border-radius: 10px;
+    font-size: 12px;
+    background-color: transparent;
+    resize: none;
+}
+
+.label {
+    padding: 0px 2px;
+    top: -8px;
+    left: 10px;
+    background-color: #ecf0f5;
+    font-size: 14px;
+    z-index: 1;
+    color: #130F26;
+    position: absolute;
+    font-family: OpenSans-SemiBold;
+}
+
+.radio-label {
+    padding: 0px 14px 0px 4px;
+}
+
+.eye-icon {
+    top: 50%;
+    right: 1.5%;
+    transform: translate(-50%, -50%);
+}
+
+.create-pswd-background {
+    height: 100%;
+    display: none;
+    background-color: #32A4FC;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+
+
+.not-member {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.sub-content {
+    font-size: 13px;
+}
+
+.create-pswd-signup-btn {
+    padding: 6px 32px;
+    background-color: #32A4FC;
+    border-radius: 10px;
+    font-size: 12px;
+    border: 2px solid #FFFFFF;
+}
+
+.img-eye {
+    position: absolute;
+    top: 50%;
+    right: 1.5%;
+    transform: translate(-50%, -50%);
+}
+
+.login-btn {
+    background: #F86847;
+    border: 1px solid #F86847;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 180px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: OpenSans-SemiBold;
+    margin-right: 30px;
+}
+
+.login-btn.sendBth {
+    width: 324px;
+    display: inline-block;
+}
+
+.login-btn.sendBth:hover {
+    color: #FFFFFF;
+}
+
+
+
+.cancelBtn {
+    border: 0.5px solid #A2A1A1;
+    background: transparent;
+    color: #464646;
+}
+
+.close-btn-container {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.forget-pswd {
+    width: 290px;
+    color: #32A4FC;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#changePass .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+@media(max-width:767px) {
+    /*.mainBody {
+        padding: 20px 0px;
+    }*/
+
+    .login-btn {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: 120px;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+.descNote
+{
+    color:red;
+}

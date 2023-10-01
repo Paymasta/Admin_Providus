@@ -1,0 +1,103 @@
+﻿#pronnameDiv {
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 20px;
+}
+
+.proTitle {
+    margin-bottom: 2px !important;
+}
+
+.proDesc {
+    margin-bottom: 6px;
+}
+
+#proName {
+    display: block;
+    border: 1px solid blue;
+    background-color: #ecf0f5;
+    border: none;
+
+    color: #130F26;
+    font: 600 16px/22px OpenSans-SemiBold;
+    margin-bottom: 6px;
+}
+
+.admin-cam-img {
+    position: absolute;
+    bottom: 0px;
+    right: 4%;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+}
+.modal-content {
+    border-radius: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.heading-container {
+    /* max-width: 440px;
+            width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    position: relative;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px 0px;
+    margin: auto;
+}
+
+.img-pic {
+    /* margin-right: 8px;*/
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+    transform: translate(0%,-50%);
+    cursor: pointer;
+}
+
+.modal-dialog {
+    height: 100%;
+    margin: 0px auto;
+}
+
+.modal-content {
+    position: absolute;
+}
+
+.body-content {
+    text-align: center;
+}
+
+.changeprofileimg {
+    margin-bottom: 20px;
+}
+
+.profile-upload-img {
+    cursor: pointer;
+}
+
+.upload-btn {
+    padding: 5px 12px;
+    margin-bottom: 10px;
+    color: white;
+    background: #F87658;
+    border: 0.5px solid #F87658;
+    border-radius: 6px;
+}
+
+@media(min-width:576px) {
+    .modal-dialog {
+        max-width: 440px;
+        width: 100%;
+    }
+}

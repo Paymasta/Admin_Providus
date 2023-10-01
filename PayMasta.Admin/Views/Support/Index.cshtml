@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "Manage Request";
+}
+
+
+<link rel="stylesheet" href="~/Content/css/early-wage-user.css">
+<script src="~/Content/js/Support/support.js"></script>
+
+<div class="main_div">
+    <div class="sec_div">
+        <div class="drop_down">
+            <div class="drop_select mb-10">
+                <span class="status-text">Status</span>
+                <select name="cars" id="cars" class="support-select-box">
+                    <option value="-1">All</option>
+                    <option value="4">Hold</option>
+                    <option value="5">Rejected</option>
+                    <option value="0">Pending</option>
+                    <option value="3">Approved</option>
+                </select>
+            </div>
+            <div class="date_option">
+                @*<div class="date_from">
+                    From
+                    <input type="date" class="to_date">
+                </div>
+                <div class="date_from">
+                    To
+                    <input type="date" class="to_date">
+                </div>*@
+                <div class="date_from">
+                    <span>From</span>
+                    <span style="position: relative">
+                        <input type="text" class="to_date" placeholder="MM/DD/YYYY" id="supp_txtFromDate">
+                        <i class="fa fa-calendar-check-o calender " id="calender_from" aria-hidden="true"></i>
+                    </span>
+                    <div>
+                        <span id="supp_fromdateError" style="color:red"></span>
+                    </div>
+
+                </div>
+                <div class="date_from">
+                    <span>To</span>
+                    <span style="position: relative">
+                        <input type="text" class="to_date" placeholder="MM/DD/YYYY" id="supp_txtEnddate">
+                        <i class="fa fa-calendar-check-o calender" aria-hidden="true" id="calender_to"></i>
+                    </span>
+                    <div>
+                        <span id="supp_TodateError" style="color:red"></span>
+                    </div>
+
+                </div>
+                <div>
+                    <button class="reset" id="supp_btnReset">Reset</button>
+                </div>
+                <div>
+                    <button class="filter" id="supp_btnFilter">Fliter</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab_data">
+            <div class="tab_data1">
+                <div class="main_transaction">
+                    <div class="text">
+                        Users
+                    </div>
+                    <div class="sec_transaction">
+                        <div class="toggleBtn mr-20">
+                            <ul class="nav nav-pills">
+                                @*<li class="active"><a data-toggle="pill" href="#home">Employee</a></li>
+                                <li><a data-toggle="pill" href="#menu1">Employer</a></li>*@
+                                <li class="active"><a data-toggle="pill" class="listToggle" href="#home" data-val="4">User</a></li>
+                                <li><a data-toggle="pill" class="listToggle" data-val="3" href="#home">Employer</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="csvexport-container">
+                            <button type="button" class="csvexport" id="btnExportToCSV">Export To CSV</button>
+                        </div>
+                        <!-- <div class="search_icon">
+                        <button class="paycycle">Upload User List</button>
+                        <img class="search-arrow" src="./images/arrow-line.png" alt="">
+                    </div> -->
+                        <div class="search_icon">
+                            <input type="search" placeholder="Search" class="search" id="supportSearch">
+
+                            <img src="~/Content/img/search-line.svg" class="search-img" />
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <div class="over-flow">
+                            <table class="table-details">
+                                <thead>
+                                    <tr>
+                                        <th class="table-head">S.No</th>
+                                        <th class="table-head">User Name</th>
+                                        <th class="table-head">Company Name</th>
+                                        <th class="table-head">Email Id</th>
+                                        <th class="table-head">Phone Number</th>
+                                        <th class="table-head">Status</th>
+                                        <th class="table-head">Date</th>
+                                        <th class="table-head">Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="supportList_body">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card" id="noRecordFound">
+                            <div class="card-body" style="text-align:center">
+                                No record found.
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="pagination">
+
+            <ul id="support_pagination" class="pagination"></ul>
+        </div>
+
+    </div>
+</div>
+

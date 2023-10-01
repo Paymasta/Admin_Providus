@@ -1,0 +1,147 @@
+﻿input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset !important;
+}
+
+.verification-form input {
+    margin: 0px 8px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #EEEEEE;
+}
+
+    .verification-form input:focus {
+        border-radius: 14px;
+        border: 1px solid #F8684780;
+        outline: none;
+    }
+
+.modal-body {
+    padding: 0rem !important;
+}
+
+.otpBody {
+    max-width: 345px;
+    width: 100%;
+    margin: 0 auto;
+    text-align:center;
+}
+
+.verify-heading {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.verify-sub-heading {
+    color: #464646;
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+.verify-timer-container {
+    width: 274px;
+}
+
+.resend-btn {
+    right: 10px;
+    background: #FFFFFF;
+    color: #32A4FF;
+    border: none;
+}
+
+.verify-grid-container {
+    height: 577.91256px;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center
+}
+
+/*.verify-grid-container .body-content {
+    padding: 100px 0px;
+}
+*/
+.verify-background {
+    height: 100%;
+    display: none;
+    background-color: #32A4FC;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+
+.pay-master-logo-container {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.verification-continue-btn-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.verification-continue-btn {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background: #F86847;
+    border: 1px solid #F86847;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.verify-close-btn-container {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+/*#verificationmodal .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+*/
+#forgetPasswordOtpverificationmodal .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+.verify-timer-img {
+    padding-right: 0.2rem;
+    width:18px;
+    height:18px;
+}
+
+#btnResend {
+    right: 10px;
+    background: #FFFFFF;
+    color: #32A4FF;
+    border: none;
+}
+
+@media (min-width: 576px) {
+    #verificationmodal .modal-dialog {
+        max-width: 900px;
+        width: 100%;
+        padding: 0px 10px;
+    }
+}
+
+@media (min-width: 800px) {
+    .btn-close {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+    }
+
+    .verify-grid-container {
+        grid-template-columns: 64% 36% !important;
+    }
+
+    .verify-background {
+        display: block !important;
+    }
+}

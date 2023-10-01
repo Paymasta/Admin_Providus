@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Bill and Payments";
+}
+
+@*
+    <a href="@Url.Action("ViewManageCotegory","ManageCategory")">Test</a>*@
+
+
+<link rel="stylesheet" href="~/Content/css/early-wage-user.css">
+
+<div class="main_div">
+    <div class="sec_div">
+        <div class="drop_down">
+            <div class="drop_select">
+                <span class="status-text">Category</span>
+                <select name="cars" class="manage-category-select-box" id="ddlService">
+                    <option value="0">Others </option>
+                </select>
+            </div>
+            <div class="date_option">
+                <div class="date_from">
+                    From
+                    <span style="position: relative">
+                        <input type="text" class="to_date to_date" placeholder="MM/DD/YYYY" id="txtFromDate">
+                        <i class="fa fa-calendar-check-o calender" aria-hidden="true" id="calender_from"></i>
+                    </span>
+                    <div>
+                        <span id="fromdateError" style="color:red"></span>
+                    </div>
+
+                </div>
+
+                <div class="date_from">
+                    <span>To</span>
+                    <span style="position: relative">
+                        <input type="text" class="to_date" placeholder="MM/DD/YYYY" id="txtEnddate">
+                        <i class="fa fa-calendar-check-o calender" aria-hidden="true" id="calender_to"></i>
+                    </span>
+                    <div>
+                        <span id="TodateError" style="color:red"></span>
+                    </div>
+
+                </div>
+                <div>
+                    <button class="reset" id="btnReset">Reset</button>
+                </div>
+                <div>
+                    <button class="filter" id="btnFilter">Filter</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab_data">
+            <div class="tab_data1">
+                <div class="main_transaction">
+                    <div class="text">
+                        Manage Category
+                    </div>
+                    <div class="sec_transaction">
+                        <div class="csvexport-container">
+                            <button class="csvexport addCat" id="addCat">Add Category</button>
+                        </div>
+                        <div class="csvexport-container">
+                            <button type="button" class="csvexport" id="btnExportToCSV">Export To CSV</button>
+                        </div>
+                        <!-- <div class="search_icon">
+                        <button class="paycycle">Upload User List</button>
+                        <img class="search-arrow" src="./images/arrow-line.png" alt="">
+                    </div> -->
+                        <div class="search_icon">
+                            <input type="search" placeholder="Search" class="search" id="categorySearch">
+
+                            <img src="~/Content/img/search-line.svg" class="search-img" />
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="over-flow">
+                    <table class="table-details" id="categoryList">
+                        <thead>
+                            <tr>
+                                <th class="table-head">S.No</th>
+                                <th class="table-head">Category</th>
+                                <th class="table-head">Sub-Category</th>
+                                <th class="table-head">Service Name</th>
+                                <th class="table-head">Status</th>
+                                <th class="table-head">Date</th>
+                                <th class="table-head">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="categoryList_body">
+                        </tbody>
+
+                    </table>
+                </div>
+                <div class="card" id="noRecordFound">
+                    <div class="card-body" style="text-align:center">
+                        No record found.
+                    </div>
+                </div>
+
+                @*<div class="pagination">
+                    <div class="arrow_custom" onclick="previousPage()"><a href="#">&lt;</a></div>
+                    <a class="anch_tag" href="#">1</a>
+                    <div class="arrow_custom"> <a href="#">&gt;</a></div>
+                </div>*@
+
+            </div>
+        </div>
+        <div class="pagination">
+            <ul id="category_pagination" class="pagination"></ul>
+        </div>
+
+    </div>
+</div>
+<script src="~/Content/js/ManageRequest/categoryList.js"></script>
+

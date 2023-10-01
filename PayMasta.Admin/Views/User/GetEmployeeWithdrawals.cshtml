@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Early Wage Access";
+}
+<link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/css/UserProfileCss/last_withdrawals.css">
+<script src="~/Content/js/Employer/employeeWithdrawals.js"></script>
+
+<div class="main_div">
+    <div class="sec_div">
+        <div class="padding-bottom">
+            <ol class="employee-list-breadcrumb">
+                <li><img src="/Content/images/arrow-left.png" class="back-btn" id="backBtn"/><a href="javacript:void(0);" >User</a></li>
+                <li><a href="#">User Detail</a></li>
+                <li class="list-active">Last Withdrawals</li>
+            </ol>
+            <div class="content-main-container">
+                <div class="personal-info-container row">
+                    <div class="col-smallest-screen col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <div class="row">
+                            <div class="content col-xs-3 col-sm-6 col-md-6">User Name</div>
+                            <div class="content text-bold col-xs-3 col-sm-3 col-md-6" id="with_user_name"></div>
+                        </div>
+                        <div class="row">
+                            <div class="content col-xs-3 col-sm-6 col-md-6">Email Address</div>
+                            <div class="content text-bold col-xs-3 col-sm-3 col-md-6" id="with_email"></div>
+                        </div>
+                        <div class="row">
+                            <div class="content col-xs-3 col-sm-6 col-md-6">Number of working days</div>
+                            <div class="content text-bold col-xs-3 col-sm-3 col-md-6" id="with_working_days"></div>
+                        </div>
+                        <div class="row">
+                            <div class="content col-xs-3 col-sm-6 col-md-6">Current Available Amount</div>
+                            <div class="content text-bold col-xs-3 col-sm-3 col-md-6" id="with_current_amount"></div>
+                        </div>
+                    </div>
+                    <div class="col-smallest-screen col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <div class="row">
+                            <div class="content col-xs-3 col-sm-6 col-md-6">Staff Id</div>
+                            <div class="content text-bold col-xs-3 col-sm-6 col-md-6" id="with_staff_id"></div>
+                        </div>
+                        <div class="row">
+                            <div class="content col-xs-3 col-sm-6 col-md-6">Mobile Number</div>
+                            <div class="content text-bold col-xs-3 col-sm-6 col-md-6" id="with_phone_number"></div>
+                        </div>
+                        <div class="row">
+                            <div class="content col-xs-3 col-sm-6 col-md-6">Earned Wages</div>
+                            <div class="content text-bold col-xs-3 col-sm-6 col-md-6" id="with_earned_wages"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab_data">
+            <div class="tab_data1">
+                <div class="main_transaction">
+                    <div class="text">
+                        Withdrawals history
+                    </div>
+                    <div class="sec_transaction">
+                        <div class="csvexport-container">
+                            <button class="csvexport">Export To CSV</button>
+                        </div>
+                        <!-- <div class="search_icon">
+                <button class="paycycle">Upload User List</button>
+                <img class="search-arrow" src="./images/arrow-line.png" alt="">
+            </div> -->
+                        <div class="drop_select">
+
+                            <select name="cars" class="user-detail-withdrawal-month" id="userDetailWithdrawalMonth">
+                                <option value="0">Month</option>
+                                <option value="1">January</option>
+                                <option value="2">february</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="over-flow">
+                    <table id="userWithdrawals">
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Accessed Amount</th>
+                                <th>Employer Status</th>
+                                <th>Admin Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeWithdrawals_List">
+                        </tbody>
+
+
+                    </table>
+                </div>
+                <div class="card" id="noRecordFound">
+                    <div class="card-body" style="text-align:center">
+                        No record found.
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="pagination">
+            <ul class="pagination" id="employeeWithdrawal_pagination"></ul>
+        </div>
+
+    </div>
+</div>
+

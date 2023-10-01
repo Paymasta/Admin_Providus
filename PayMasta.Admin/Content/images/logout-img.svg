@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+  <g id="Group_50220" data-name="Group 50220" transform="translate(-981 -416)">
+    <g id="Group_50216" data-name="Group 50216" transform="translate(0 54)">
+      <g id="Group_50211" data-name="Group 50211" transform="translate(-4 54)">
+        <g id="Group_50207" data-name="Group 50207" transform="translate(0 54)">
+          <g id="Group_50203" data-name="Group 50203" transform="translate(0 54)">
+            <g id="Group_50198" data-name="Group 50198" transform="translate(9 44)">
+              <g id="Group_50196" data-name="Group 50196" transform="translate(940 -75)">
+                <circle id="Ellipse_19" data-name="Ellipse 19" cx="17" cy="17" r="17" transform="translate(36 231)" fill="#32a4ff"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Group_50219" data-name="Group 50219" transform="translate(988 423)">
+      <path id="Path_69508" data-name="Path 69508" d="M0,0H20V20H0Z" fill="none"/>
+      <path id="Path_69509" data-name="Path 69509" d="M10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18Zm4-4.8L18,10,14,6.8V9.2H7.6v1.6H14Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

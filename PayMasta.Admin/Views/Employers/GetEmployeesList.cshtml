@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Early Wage Access";
+}
+
+    <link rel="stylesheet" href="~/Content/css/Employercss/employeelist.css">
+    <script src="~/Content/js/Employer/employerEmployees.js"></script>
+
+
+    <div class="main_div">
+        <div class="sec_div">
+            <ol class="employee-list-breadcrumb">
+                <li class="list-first-content"><a href="javascript:void(0);" id="backBtn"><img src="/Content/img/arrow-left.png" alt="" class="back-btn"></a><a href="javascipt:void(0);">Employer</a></li>
+                <li><a href="#">Employer Detail</a></li>
+                <li class="list-active">View Employee List</li>
+            </ol>
+            <div class="tab_data">
+                <div class="tab_data1">
+                    <div class="main_transaction">
+                        <div class="text">
+                            <p id="list_company_name"></p> Employees List
+                        </div>
+                        <div class="sec_transaction">
+                            <div class="csvexport-container">
+                                <button class="csvexport" id="btnExportToCSV">Export To CSV</button>
+                            </div>
+                            <!-- <div class="search_icon">
+                                <button class="paycycle">Upload User List</button>
+                                <img class="search-arrow" src="/Content/img/arrow-line.png" alt="">
+                            </div> -->
+                            <!-- <div class="search_icon">
+                                <input type="search" placeholder="Search" class="search">
+                                <img class="search-img" src="/Content/img/search-line.svg" alt="">
+                            </div> -->
+                            <div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="over-flow">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Name</th>
+                                    <th>Staff Id</th>
+                                    <th>Phone Number</th>
+                                    <th>Email Id</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+                            <tbody id="employerEmp_List">
+                                @*<tr>
+                                    <td>1</td>
+                                    <td>Alex Deo</td>
+                                    <td>PM6789</td>
+                                    <td>+919876543210</td>
+                                    <td>alex.deo45@gmail.com</td>
+                                    <td class="active">Active</td>
+                                    <td><img class="img-eye" src="/Content/img/view_eye_icon.svg" alt=""><img class="img-eye" src="/Content/img/delete.png" alt=""> <img class="img-eye" class="" src="/Content/img/close.png" alt=""> </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Alex Deo</td>
+                                    <td>PM6789</td>
+                                    <td>+919876543210</td>
+                                    <td>alex.deo45@gmail.com</td>
+                                    <td class="in-active">Inactive</td>
+                                    <td><img class="img-eye" src="/Content/img/view_eye_icon.svg" alt="">
+                                    <img class="img-eye" src="/Content/img/delete.png" alt=""> <img class="img-eye" class="" src="/Content/img/close.png" alt=""> </td>
+                                </tr>*@
+                                @*<tr>
+                                    <td class="border-bottom-none">10</td>
+                                    <td class="border-bottom-none">Alex Deo</td>
+                                    <td class="border-bottom-none">PM6789</td>
+                                    <td class="border-bottom-none">+919876543210</td>
+                                    <td class="border-bottom-none">alex.deo45@gmail.com</td>
+                                    <td class="in-active border-bottom-none">Inactive</td>
+                                    <td class="border-bottom-none"><img class="img-eye" src="/Content/img/view_eye_icon.svg" alt=""><img class="img-eye" src="/Content/img/delete.png" alt=""> <img class="img-eye" class="" src="/Content/img/close.png" alt=""> </td>
+                                </tr>*@
+                            </tbody>
+                            
+                            
+                        </table>
+                    </div>
+                    <div>
+                        <div class="card" id="employer-employees-no-record">
+                            <div class="card-body" style="text-align:center">
+                                No record found.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <ul class="pagination" id="employerEmployessPagination"></ul>
+            </div>
+        </div>
+    </div>
+
+
+
+

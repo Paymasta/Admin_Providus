@@ -1,0 +1,188 @@
+﻿@{
+    ViewBag.Title = "Early Wage Access";
+}
+
+<style>
+    .centerBox {
+        top: 35%;
+    }
+
+    .labelText {
+        font-size: 16px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .viewSupport .w-25 .descText, .w-35 .descText {
+        font: 600 16px/22px OpenSans-SemiBold;
+        color: #130F26;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .getFlex {
+        flex-wrap: nowrap;
+    }
+</style>
+
+<div class="backButton">
+    <a href="@Url.Action("Index","Employers")">
+        <img src="/Content/img/vuesax-linear-arrow-left.svg">
+    </a>
+    Employer /<span class="viewDesc"> Employer Detail </span>
+</div>
+
+
+<div class="viewSupport manageCategory updateProfile">
+    <div class="manageBox getFlex" style="width:100%">
+        <div class="imgMange">
+            <img  id="profileImg" src="~/Content/img/images/man-placeholder.png" />
+
+        </div>
+        <div class="rightOrg">
+            <div class="d-flex ">
+                <div class="w-35">
+                    <p class="labelText">Organisation Name</p>
+                </div>
+                <div class="w-35">
+                    <p class="descText" id="organisationName"></p>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="w-35 mb-0">
+                    <p class="labelText">Email Address</p>
+                </div>
+                <div class="w-35 mb-0">
+                    <p class="descText" id="email"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex">
+        <div class="w-25">
+            <p class="labelText">Mobile Number</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="phoneNumber"></p>
+        </div>
+        <div class="w-25">
+            <p class="labelText">Country</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="countryCode"></p>
+        </div>
+
+        <div class="w-25">
+            <p class="labelText">State</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="state"></p>
+        </div>
+
+        <div class="w-25">
+            <p class="labelText">Post Code</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="postalCode"></p>
+        </div>
+
+        <div class="w-25">
+            <p class="labelText">Office Address</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="office"></p>
+        </div>
+    </div>
+</div>
+
+
+@*<div class="btnSecView flexCenter">
+        <button class="btnCancel btnSave" data-toggle="modal" data-target="#blockeModel">
+            Block
+        </button>
+        <button class="btnCancel" data-toggle="modal" data-target="#removeModel">
+            Remove
+        </button>
+        <button class="btnCancel btnHold" data-toggle="modal" data-target="#viewEmpModel">
+            View Employees
+        </button>
+    </div>*@
+<div class="btnSecView flexCenter"> 
+    <button class="btnCancel btnSave removedata" id="block_user">
+        Block
+    </button>
+    <button class="btnCancel btnSave removedata" id="unblock_user">
+        UnBlock
+    </button>
+    <button class="btnCancel" id="delete_user">
+        Remove
+    </button>
+    <button class="btnCancel btnHold" id="view_employer_employees_list">
+        View Employees
+    </button>
+</div>
+
+
+<!-- Modal resolveModel -->
+
+
+<div class="modal fade" id="blockeModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered centerBox" role="document">
+
+        <!-- Modal content-->
+        <div class="modal-content logoutBody">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div class="popupBody">
+                    <p class="popTitle">Are you sure you want to block this user?</p>
+                    <div class="flexCenter">
+                        <button class="btnEdit">Block</button>
+                        <button class="btnEdit btnDelete">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Reject Model -->
+
+
+<div class="modal fade" id="removeModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered centerBox" role="document">
+
+        <!-- Modal content-->
+        <div class="modal-content logoutBody">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div class="popupBody">
+                    <p class="popTitle">Are you sure you want to remove this user?</p>
+                    <div class="flexCenter">
+                        <button class="btnEdit">Remove</button>
+                        <button class="btnEdit btnDelete">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/Content/js/Employer/viewProfile.js"></script>

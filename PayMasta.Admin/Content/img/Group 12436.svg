@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
+  <g id="Group_12436" data-name="Group 12436" transform="translate(-0.5)">
+    <rect id="Rectangle_5030" data-name="Rectangle 5030" width="75" height="75" rx="15" transform="translate(0.5)" fill="#32a4ff"/>
+    <g id="restaurant-line" transform="translate(17.5 18)">
+      <path id="Path_68549" data-name="Path 68549" d="M0,0H40V40H0Z" fill="none"/>
+      <path id="Path_68550" data-name="Path 68550" d="M37,2V38H33.222V25.4H25.667V12.8A11.076,11.076,0,0,1,37,2ZM33.222,6.554A7.2,7.2,0,0,0,29.444,12.8v9h3.778V6.554ZM14.333,23.42V38H10.556V23.42A9.122,9.122,0,0,1,3,14.6V3.8H6.778V16.4h3.778V3.8h3.778V16.4h3.778V3.8h3.778V14.6a9.121,9.121,0,0,1-7.554,8.82Z" transform="translate(0 0)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

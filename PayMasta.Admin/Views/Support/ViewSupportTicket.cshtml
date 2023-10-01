@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = "Manage Request";
+}
+@*<style>
+    .centerBox {
+        top: 35%;
+    }
+</style>*@
+<style>
+    .d-none {
+        visibility:hidden;
+    }
+</style>
+<link rel="stylesheet" href="~/Content/css/support/support.css"/>
+<script src="~/Content/js/Support/viewProfile.js"></script>
+<div class="backButton">
+    <a href="javascript:void(0);" id="backBtn"><img class="" src="~/Content/images/arrow-left.png" /></a>
+    Contact Request / <span class="viewDesc">View Detail</span>
+</div>
+
+<div class="viewSupport d-flex">
+    <div class="w-25">
+        <p class="labelText">Ticket Number</p>
+    </div>
+    <div class="w-25">
+        <p class="descText" id="ticket_number"></p>
+    </div>
+    <div class="w-25">
+        <p class="labelText">Username</p>
+    </div>
+    <div class="w-25">
+        <p class="descText" id="username"></p>
+    </div>
+
+    <div class="w-25">
+        <p class="labelText">Email Address</p>
+    </div>
+    <div class="w-25">
+        <p class="descText" id="email"></p>
+    </div>
+
+    <div class="w-25">
+        <p class="labelText">Date</p>
+    </div>
+    <div class="w-25">
+        <p class="descText" id="date"></p>
+    </div>
+
+    <div class="w-25">
+        <p class="labelText">Title</p>
+    </div>
+    <div class="w-25">
+        <p class="descText" id="title"></p>
+    </div>
+
+    <div class="w-25">
+        <p class="labelText">Status</p>
+    </div>
+    <div class="w-25">
+        <p class="descText" id="status"></p>
+    </div>
+
+    <div class="w-25">
+        <p class="labelText">Description</p>
+    </div>
+    <div class="w-25">
+        <p class="descText" id="description"></p>
+    </div>
+
+</div>
+<div class="btnSecView flexCenter">
+    <button class="btnCancel btnSave d-none" data-toggle="modal" data-target="#resolveModel" id="resolve_pop_btn" >
+        Resolve
+    </button>
+    <button class="btnCancel d-none" data-toggle="modal" data-target="#rejectModel" id="reject_pop_btn" >
+        Reject
+    </button>
+    <button class="btnCancel btnHold d-none" data-toggle="modal" data-target="#holdModel" id="hold_pop_btn">
+        Hold
+    </button>
+</div>
+
+
+
+
+
+<!-- Modal resolveModel -->
+
+
+<div class="modal fade" id="resolveModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered centerBox" role="document">
+
+        <!-- Modal content-->
+        <div class="modal-content logoutBody">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div class="popupBody">
+                    <p class="popTitle">Are you sure you want to resolve this request?</p>
+                    <div class="flexCenter">
+                        <button class="btnEdit" id="btn_resolve">Resolve</button>
+                        <button class="btnEdit btnDelete" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Reject Model -->
+
+
+<div class="modal fade" id="rejectModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered centerBox" role="document">
+
+        <!-- Modal content-->
+        <div class="modal-content logoutBody">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div class="popupBody">
+                    <p class="popTitle">Are you sure you want to reject this request?</p>
+                    <div class="flexCenter">
+                        <button class="btnEdit" id="btn_delete">Reject</button>
+                        <button class="btnEdit btnDelete" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Hold Model -->
+<div class="modal fade" id="holdModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered centerBox" role="document">
+
+        <!-- Modal content-->
+        <div class="modal-content logoutBody">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div class="popupBody">
+                    <p class="popTitle">Are you sure you want to hold this request?</p>
+                    <div class="flexCenter">
+                        <button class="btnEdit" id="btn_hold">Hold</button>
+                        <button class="btnEdit btnDelete" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

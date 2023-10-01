@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Manage Request";
+}
+
+<style>
+    .centerBox {
+        top: 35%;
+    }
+
+    .descText {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+   
+</style>
+<script src="~/Content/js/UpdateProfileRequest/viewProfileRequest.js"></script>
+<div class="backButton">
+    <a href="@Url.Action("Index","UpdateProfileRequest")">
+        <img class="" src="~/Content/images/arrow-left.png" />
+    </a>
+    Update Profile Request / <span class="viewDesc">View Detail</span>
+</div>
+
+<div class="viewSupport manageCategory updateProfile">
+    <div class="manageBox flexAlign" style="width:100%">
+        <div class="imgMange">
+           
+            <img id="old_profile_image" src="" />
+
+        </div>
+     
+        @*<div class="">
+            <button class="btnEdit btnDelete" >Cancel</button>
+            <button class="btnEdit" >Update</button>
+        </div>*@
+    </div>
+
+    <div class="d-flex">
+        <div class="w-25">
+            <p class="labelText">First Name</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="old_first_name"></p>
+        </div>
+        <div class="w-25">
+            <p class="labelText">Middle Name</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="old_middle_name"></p>
+        </div>
+
+        <div class="w-25">
+            <p class="labelText">Last Name</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="old_last_name"></p>
+        </div>
+
+        <div class="w-25">
+            <p class="labelText">Email Address</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="old_email"></p>
+        </div>
+
+        <div class="w-25">
+            <p class="labelText">Phone Number</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="old_phoneNumber"> </p>
+        </div>
+
+        @*<div class="w-25">
+            <p class="labelText">Address</p>
+        </div>*@
+        <div class="w-25">
+            <p class="descText" id="old_address"></p>
+        </div>
+    </div>
+
+   
+</div>
+
+
+<div class="viewSupport manageCategory updateProfile mt-50">
+    <div class="manageBox flexAlign" style="width:100%">
+        <div class="imgMange">
+           
+            <img id="old_profile_image1" src="" />
+        </div>
+
+        <div class="">
+            @*<button class="btnEdit btnDelete">Cancel</button>*@
+            <button class="btnEdit" id="updateRequest" >Update</button>
+        </div>
+    </div>
+
+    <div class="d-flex">
+        <div class="w-25">
+            <p class="labelText">First Name</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="new_first_name">Fist Name</p>
+        </div>
+        <div class="w-25">
+            <p class="labelText">Middle Name</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="new_middle_name"></p>
+        </div>
+
+        <div class="w-25">
+            <p class="labelText">Last Name</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="new_last_name"></p>
+        </div>
+
+        <div class="w-25">
+            <p class="labelText">Email Address</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="new_email"></p>
+        </div>
+
+        <div class="w-25">
+            <p class="labelText">Phone Number</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="new_phoneNumber"></p>
+        </div>
+
+        <div class="w-25">
+            <p class="labelText">Comment</p>
+        </div>
+        <div class="w-25">
+            <p class="descText" id="new_Comment"></p>
+        </div>
+    </div>
+</div>

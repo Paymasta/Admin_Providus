@@ -1,0 +1,383 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PayMasta</title>
+    <link rel="shortcut icon" href="~/Content/img/pay-master-logo.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @*<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>*@
+    @*<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="~/Content/js/Account/Account.js"></script>
+
+    <link href="~/Content/css/Account/login.css" rel="stylesheet" />
+    <link href="~/Content/css/Account/forgetpass.css" rel="stylesheet" />
+    <link href="~/Content/css/Account/createpass.css" rel="stylesheet" />
+    <link href="~/Content/css/Account/otpverification.css" rel="stylesheet" />
+    <!-- <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+     <link href="~/Content/css/bootstrap-select.min.css" rel="stylesheet" />-->
+
+</head>
+<body>
+
+
+    <!--login html start-->
+    <div class="banner-img">
+        <div class="mainBox">
+            <div class="mainCenter">
+                <div class="login-grid-container">
+                    <div class="text-center login-body-content">
+                        <div class="heading">Welcome Back</div>
+                        <div class="sub-heading pt-2">Sign in with your PayMasta account</div>
+                        <div class="sub-heading pb-4">Please enter your details</div>
+                        <div>
+
+                            <div class="pb-4 d-flex justify-content-center">
+                                <div class="radio1">
+                                    <input id="login-email" name="userLogin" type="radio" value="0" checked onclick="showEmailLabel()">
+                                    <label for="login-email" id="email-radio-text" class="login-radio-label  active">Email Address</label>
+                                </div>
+                                <div class="radio1">
+                                    <input id="login-mobile" name="userLogin" type="radio" value="1" onclick="showMobileLabel()">
+                                    <label for="login-mobile" id="mobile-radio-text" class="login-radio-label mobile-label">Mobile</label>
+                                </div>
+                            </div>
+
+                            <div class="mainBody">
+                                <div class="position-relative d-inline-block login-input-container-height mb-20" id="divEmail">
+                                    <label for="" class="position-absolute label">Email</label>
+                                    <div>
+                                        <input type="text" class="login-input-text" placeholder="Enter your email address" id="txtEmail" maxlength="40" />
+
+                                    </div>
+                                    <span id="usercheck" style="color: red;float:left;">
+                                        Please enter your email
+                                    </span>
+                                </div>
+
+
+                                <div class="position-relative d-inline-block login-input-container-height  mb-20" id="divMobile">
+                                    <label for="" class="position-absolute label">Mobile</label>
+                                    <div class="position-relative">
+                                        <div class="position-absolute country-code">+234</div>
+
+                                        <input type="text" class="login-input-text mobile-input-padding-left" placeholder="Enter your mobile number" id="txtMobile" minlength="10" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+
+                                    </div>
+                                    <span id="mobilechk" style="color: red;float: left;">
+                                        Please enter your mobile number
+                                    </span>
+                                </div>
+
+
+
+
+                                <div class="position-relative d-inline-block login-input-container-height  mb-20">
+                                    <label for="" class="position-absolute label">Password</label>
+                                    <div class="position-relative">
+                                        <input type="password" class="login-input-text " placeholder="Enter your password" id="txtPassword" />
+
+                                        <span toggle="#password-field" class="position-absolute img-eye fa fa-fw fa-eye-slash field_icon toggle-password" id="txtPasswordtoggle"></span>
+
+                                        @*<span id="txtPasswordRegister1" toggle="#password-field" class="position-absolute img-eye fa fa-fw fa-eye-slash field_icon toggle-password"></span>*@
+                                        @*<span class="position-absolute"><i class="toggle-password  fa fa-fw fa-eye-slash"></i></span>*@
+                                    </div>
+                                    <span id="passcheck" style="color: red; float: left;">
+                                        Please enter your password
+                                    </span>
+                                </div>
+
+
+                                <div class="text-end pb-2 login-forgot-pswd-text-container">
+                                    <a href="#" id="forgetPasswordAnchor" class="forget-pswd m-auto">Forgot Password ?</a>
+                                </div>
+
+                                <div class="pt-5">
+                                    <button type="button" id="btnLogin" class="login-btn py-2 text-light">Login</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="login-background text-center text-light position-relative">
+
+                        <div class="position-absolute abc w-100">
+                            <img src="~/Content/images/pay-master-logo.png" width="200" alt="" />
+                            @*<div class="not-member pb-3">Not a member of PayMasta yet ?</div>
+                                <div class="sub-content pb-4 px-4">
+                                    It’s easy, let’s get started by creating a new PayMasta transaction account for you!
+                                </div>*@
+                            @*<button class="login-modal-signup-btn text-light" id="btnRegister3">SIGN UP</button>*@
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--login html end-->
+    <!--forget password-->
+    <div class="modal fade" id="forgetPasswordModal" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="">
+                    <div class="modal-body forgot-modal-grid-container">
+                        <div class="text-center forgot-pswd-body-content">
+
+                            <div class="heading">Forgot Password</div>
+                            <div class="py-4 forgot-sub-heading mainBody">
+                                Enter the email address or phone number you used When you joined and we’ll send you instructions to reset your password.
+                            </div>
+
+                            <div class="position-relative d-inline-block forgot-pswd-input-container-height mb-20">
+                                <label for="" class="position-absolute label">Email</label>
+                                <div>
+                                    <input type="email" class="forgot-pswd-input-text" placeholder="Enter your email address" id="txtForgetEmail" maxlength="30" />
+
+                                </div>
+                                <span id="txtForgetEmailError" style="color:red;float:left">
+                                    Please enter your email.
+                                </span>
+                            </div>
+
+                            <div class="d-flex align-items-center or-seperator-container m-auto or-seperator-padding">
+                                <div class="line-1"></div>
+                                <div class="or-seperator text-light m-auto d-flex align-items-center justify-content-center">
+                                    OR
+                                </div>
+                                <div class="line-2"></div>
+                            </div>
+
+
+                            <div class="position-relative d-inline-block forgot-pswd-input-container-height">
+                                <label for="" class="position-absolute label">Mobile Number</label>
+                                <div class="position-relative">
+                                    <div class="position-absolute forgot-pswd-country-code">+234</div>
+                                    <input type="text" class="forgot-pswd-input-text forgot-pswd-mob-padding-left" placeholder="Enter your mobile number" id="txtForgetMobile" minlength="6" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                                </div>
+                                <span id="txtForgetMobileError" style="color:red;float:left">
+                                    Please enter your mobile number.
+                                </span>
+                            </div>
+
+                            <div class="pt-5">
+                                <button type="button" class="reset-new-pswd-btn py-2 text-light" id="btnForgetPassword">Reset New Password</button>
+                            </div>
+
+                        </div>
+                        <div class="forgot-pswd-background text-center text-light position-relative">
+                            <div class="close-btn-container text-end pt-4 px-4">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnResetForgetPassValues"></button>
+                            </div>
+                            <div class="position-absolute abc w-100">
+
+                                <img src="~/Content/images/pay-master-logo.png" width="200" />
+                                @* <div class="not-member pb-3">Not a member of PayMasta yet ?</div>
+                                    <div class="sub-content pb-4 px-4">
+                                        It’s easy, let’s get started by creating a new PayMasta transaction account for you!
+                                    </div>*@
+                                @*<button class="forgot-pswd-signup-btn text-light" id="btnRegister1">SIGN UP</button>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--forget password end-->
+    <!--create password-->
+
+    <div>
+        <div class="modal fade" id="createpasswordmodal" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+
+
+                    <div class="">
+
+                        <div class="modal-body create-pswd-grid-container">
+                            @*<div class="signup-close-btn-container text-end pt-4 px-4">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnCreatPasswordModal"></button>
+                            </div>*@
+                            <div class=" create-pswd-body-content">
+                                <div class="mainBody">
+                                    <div class="heading">Create Password</div>
+                                    <div class="py-2">
+                                        <div class="sub-heading mb-3">Hey user, Welcome to PayMasta Set your new password</div>
+                                    </div>
+                                    <div class="">
+                                        <div class="position-relative  create-pswd-input-container-height mb-3">
+                                            <label for="" class="position-absolute label">New Password</label>
+                                            <div class="position-relative">
+                                                <input type="password" class="create-pswd-input-text form-control" placeholder="Enter your new password" id="txtForgetPassword" minlength="8" maxlength="30"/>
+                                                @*<img src="~/Content/images/eye-icon.png" class="position-absolute eye-icon" />*@
+                                                @*<span class="position-absolute"><i class="toggle-password  fa fa-fw fa-eye-slash"></i></span>*@
+                                                <span id="txtForgetResetPassword" toggle="#password-field" class="position-absolute img-eye fa fa-fw fa-eye-slash field_icon toggle-password "></span>
+                                            </div>
+                                            <div>
+                                                <span id="spntxtForgetPasswordError" style="color: red;  padding-top: 4px" ;></span>
+                                            </div>
+                                            <div id="strengthMessage1" style="color: red; padding-top:-1px" ;></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="">
+                                        <div class="position-relative  create-pswd-input-container-height mb-3">
+                                            <label for="" class="position-absolute label">Confirm Password</label>
+                                            <div class="position-relative">
+                                                <input type="password" class="create-pswd-input-text toggle-password form-control" placeholder="Retype your password" id="txtForgetConfirmPassword" minlength="8" maxlength="30"/>
+                                                <span id="txtForgetResetConfirmPassword" toggle="#password-field" class="position-absolute img-eye fa fa-fw fa-eye-slash field_icon toggle-password "></span>
+                                            </div>
+                                            <div>
+                                                <span id="spntxtForgeContPasswordError" style="color: red; "></span>
+                                            </div>
+                                        </div>
+                                        @*<div>
+                                                <span id="spntxtForgeContPasswordError" style="color: red; "></span>
+                                            </div>*@
+                                    </div>
+                                    <div class="pt-5">
+                                        <button type="button" class="login-btn py-2 text-light" id="btnSavePassword">Save</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="create-pswd-background text-center text-light position-relative">
+                                @*<div class="close-btn-container text-end pt-4 px-4">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnCreatPasswordModal"></button>
+                                    </div>*@
+                                <div class="position-absolute abc w-100">
+
+                                    <img src="~/Content/images/pay-master-logo.png" width="200" />
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--create password end-->
+    <!--otp verification-->
+    <div class="modal fade" id="verificationmodal" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body verify-grid-container">
+
+                    <div class="otpBody">
+                        <div class="verify-heading">Verification</div>
+                        <div class="py-3">
+                            <div class="verify-sub-heading">Enter the 4 digit code that you have</div>
+                            <div class="verify-sub-heading"> Received in your mobile number</div>
+                        </div>
+
+                        <form action="" class="mt-5 verification-form">
+                            <input class="otp" type="text" maxlength=1 id="txtFirstDigit" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                            <input class="otp" type="text" maxlength=1 id="txtSecondDigit" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                            <input class="otp" type="text" maxlength=1 id="txtThirdDigit" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                            <input class="otp" type="text" maxlength=1 id="txtFourthDigit" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+
+                            <div class="d-flex justify-content-between text-start py-2 m-auto verify-timer-container">
+                                <div class="px-2">
+                                    @*<img src="./timer-img.svg" alt="" class="verify-timer-img">*@
+                                    <img src="~/Content/images/timer-img.svg" class="verify-timer-img" />
+                                    <span id="timer"></span>
+                                </div>
+                                <div class="text-end position-relative resend-btn">
+                                    <button type="button" id="btnResend">Resend</button>
+                                </div>
+                            </div>
+
+                            <div class="py-5 verification-continue-btn-container">
+                                <button type="button" class="verification-continue-btn py-2 text-light" id="btnOtpVerify">Continue</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="verify-background text-center text-light position-relative">
+                        @*<div class="verify-close-btn-container text-end pt-4 px-4">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>*@
+                        <div class="position-absolute pay-master-logo-container w-100">
+                            <img src="~/Content/images/pay-master-logo.png" height="142" width="250" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--otp verification-->
+
+</body>
+</html>
+
+<script>
+    function showEmailLabel() {
+      
+        document.getElementById("mobile-radio-text").style.color = "#797979B5";
+        document.getElementById("email-radio-text").style.color = "#130F26";
+    }
+
+    function showMobileLabel() {
+        document.getElementById("mobile-radio-text").style.color = "#130F26";
+        document.getElementById("email-radio-text").style.color = "#797979B5";
+    }
+
+    $(document).ready(function () {
+
+        $('#btnTest').click(function () {
+            $("#forgetPasswordModal").modal('show');
+
+
+
+        })
+    });
+    $(document).ready(function () {
+
+        $('#btnCreate').click(function () {
+            $("#createpasswordmodal").modal('show');
+        })
+    });
+
+    $(document).ready(function () {
+
+        $('#otpVer').click(function () {
+            $("#verificationmodal").modal('show');
+        })
+    });
+   
+</script>

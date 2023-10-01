@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "Bill and Payments";
+}
+
+<style>
+    .centerBox {
+        top: 35%;
+    }
+
+    .manageBox .leftTitle, .manageBox .desc {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .manageCategory .manageBox .desc {
+        color: #130F26;
+        font: 600 16px/22px OpenSans-SemiBold;
+        width: calc(100% - 180px);
+        margin-bottom: 0px;
+        border: none;
+    }
+    .proDesc
+    {
+        display:none;
+    }
+    .btnSecond {
+        display: none;
+    }
+    
+</style>
+<script src="~/Content/js/ManageRequest/viewCategory.js"></script>
+<div class="backButton">
+    <img class="" src="~/Content/images/arrow-left.png" id="backImg"/>
+    Manage Category / <span class="viewDesc">Edit </span>
+</div>
+
+<div class="manageCategory">
+    <div class="manageBox d-flex">
+        <p class="leftTitle">Category</p>
+        <p class="desc" id="category_name"></p>
+        <input type="text" class="proDesc" id="catName" pattern="^[A-Za-z -]+$" maxlength="50"/>
+        @*<div class="rightInput">
+            <input type="text" placeholder="Lorem Ipsum" />
+        </div>*@
+    </div>
+    <div class="manageBox d-flex">
+        <p class="leftTitle">Sub-Category</p>
+        <p class="desc" id="subcategory_name"></p>
+        <input type="text" class="proDesc" id="sub_catName" pattern="^[A-Za-z -]+$" maxlength="50" />
+
+        <input type="text" class="desc" />
+
+    </div>
+    @*<div class="manageBox flexAlign">
+       <div class="imgMange">
+            <img src="~/Content/img/images/man-placeholder.png" id="profile_image"/>
+            <div class="deleteBox">
+                <img class="deleteImg" src="~/Content/img/images/deleteIcon.png" />
+            </div>
+        </div>
+        <div class="camBack">
+            <img class="cameraImg" src="~/Content/img/images/cameraIcon.png" />
+        </div>
+        <div class="">
+            <button class="btnEdit btnDelete btnfirst" data-toggle="modal" data-target="#deleteChanges">Delete</button>
+            <button class="btnEdit btnfirst" id="editBtn">Edit</button>
+            <button class="btnEdit btnDelete btnSecond" id="btnCancel">Cancel</button>
+            <button class="btnEdit btnSecond" data-toggle="modal" data-target="#saveChanges" >Save</button>
+        </div>
+    </div>*@
+</div>
+
+
+<!-- Modal -->
+
+
+<div class="modal fade" id="saveChanges" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered centerBox" role="document">
+
+        <!-- Modal content-->
+        <div class="modal-content logoutBody">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div class="popupBody">
+                    <p class="popTitle">Are you sure you want to save the changes?</p>
+                    <div class="flexCenter">
+                        <button class="btnEdit" id="btnSave">Save</button>
+                        <button class="btnEdit btnDelete">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="deleteChanges" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered centerBox" role="document">
+
+        <!-- Modal content-->
+        <div class="modal-content logoutBody">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div class="popupBody">
+                    <p class="popTitle">Are you sure you want to delete this category?</p>
+                    <div class="flexCenter">
+                        <button class="btnEdit btnDelete" id="removedata">Delete</button>
+                        <button class="btnEdit">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Manage Article";
+}
+
+<style>
+    .centerBox {
+        top: 35%;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/css/early-wage-user.css">
+<link href="~/Content/css/texteditorCss/TextEditor.css" rel="stylesheet" />
+<script src="~/Content/js/ManageArticle/ManageArticle.js"></script>
+
+<div class="main_div">
+    <div class="sec_div">
+        <div class="tab_data">
+            <div class="tab_data1">
+                <div class="main_transaction">
+                    <div class="text">
+                        Manage Articles
+                    </div>
+                    <div class="sec_transaction">
+
+                        <div class="csvexport-container">
+                            @*<button type="button" class="csvexport" id="btnExportToCSV">Export To CSV</button>*@
+                            <a href="@Url.Action("SaveArtical", "ManageArticle")"><button type="button" class="csvexport" id="btnExportToCSV">Create Article</button></a>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="over-flow">
+                    <table class="table-details">
+                        <thead>
+                            <tr>
+                                <th class="table-head">S.No</th>
+                                <th class="table-head">Article</th>
+                                <th class="table-head">PriceMoney</th>
+                                <th class="table-head">Option 1</th>
+                                <th class="table-head">Option 2</th>
+                                <th class="table-head">Option 3</th>
+                                <th class="table-head">Option 4</th>
+                                <th class="table-head">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="articleList_body">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card" id="noRecordFound">
+                    <div class="card-body" style="text-align:center">
+                        No record found.
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="pagination">
+        <ul id="request_pagination" class="pagination"></ul>
+    </div>
+</div>
