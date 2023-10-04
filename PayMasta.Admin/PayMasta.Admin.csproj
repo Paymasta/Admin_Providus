@@ -146,6 +146,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BillPamentHistoryController.cs" />
     <Compile Include="Controllers\EmployersController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -566,6 +567,7 @@
     <Content Include="Content\js\UpdateProfileRequest\updateProfileRequest.js" />
     <Content Include="Content\js\UpdateProfileRequest\viewProfileRequest.js" />
     <Content Include="Content\js\UserProfile\ViewUserProfile.js" />
+    <Content Include="Content\js\Users\BillHistory.js" />
     <Content Include="Content\js\Users\early-wage-user.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -658,6 +660,7 @@
     <Content Include="Views\ManageArticle\Index.cshtml" />
     <Content Include="Views\ManageArticle\SaveArtical.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\BillPamentHistory\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

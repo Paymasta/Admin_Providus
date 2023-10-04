@@ -7,6 +7,7 @@ using PayMasta.Repository.User;
 using PayMasta.Service.ManageNotifications;
 using PayMasta.Utilities;
 using PayMasta.Utilities.PushNotification;
+using PayMasta.ViewModel.BillHistory;
 using PayMasta.ViewModel.Common;
 using PayMasta.ViewModel.ManageNotificationsVM;
 using PayMasta.ViewModel.User;
@@ -597,6 +598,46 @@ namespace PayMasta.Service.User
             {
 
             }
+        }
+
+        public async Task<GetBillHistoryListReponse> GetBillHistoryList(GetBillHistoryListRequest request)
+        {
+            var res = new GetBillHistoryListReponse();
+
+            try
+            {
+                int pendingEmp = -1;
+                if (request.Status == 3)
+                {
+                    pendingEmp = 0;
+                    request.Status = -1;
+                }
+                if (request.Status == 1)
+                {
+                    pendingEmp = 1;
+                }
+
+                var employeesList = await _userRepository.GetBillHistoryList(pendingEmp, request.pageNumber, request.PageSize, request.Status, request.FromDate, request.ToDate, request.SearchTest);
+                if (employeesList.Count > 0)
+                {
+                    res.getBillHistoryLists = employeesList;
+                    res.IsSuccess = true;
+                    res.RstKey = 1;
+                    res.Message = ResponseMessages.DATA_RECEIVED;
+                }
+                else
+                {
+                    res.IsSuccess = false;
+                    res.RstKey = 2;
+                    res.Message = ResponseMessages.DATA_NOT_RECEIVED;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return res;
         }
     }
 }

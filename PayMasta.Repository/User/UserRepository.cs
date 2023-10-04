@@ -3,6 +3,7 @@ using PayMasta.Entity.BankDetail;
 using PayMasta.Entity.UserMaster;
 using PayMasta.Entity.UserSession;
 using PayMasta.Utilities;
+using PayMasta.ViewModel.BillHistory;
 using PayMasta.ViewModel.User;
 using System;
 using System.Collections.Generic;
@@ -739,6 +740,81 @@ namespace PayMasta.Repository.User
             else
             {
                 return (await exdbConnection.ExecuteAsync(query, bankDetail));
+            }
+        }
+
+        public async Task<List<GetBillHistoryList>> GetBillHistoryList(int pendingemp, int pageNumber, int pageSize, int status, DateTime? fromDate, DateTime? toDate, string searchText, IDbConnection exdbConnection = null)
+        {
+            if (string.IsNullOrEmpty(searchText)) { searchText = ""; }
+            string query = @"SELECT 
+                                              COUNT(WT.WalletTransactionId) OVER() as TotalCount
+                                              ,ROW_NUMBER() OVER(ORDER BY WT.WalletTransactionId DESC) AS RowNumber
+                                              ,WT.[WalletTransactionId]
+                                              ,WT.[Guid]
+                                              ,WT.[TotalAmount]
+                                              ,WT.[WalletAmount]
+                                              ,WT.[ServiceCategoryId]
+                                              ,WT.[SenderId]
+                                              ,WT.[ReceiverId]
+                                              ,WT.[AccountNo]
+                                              ,WT.[TransactionId]
+                                              ,WT.[InvoiceNo]
+                                              ,WT.[TransactionStatus]
+                                              ,WT.[TransactionType]
+                                              ,WT.[SubCategoryId]
+                                              ,WT.[CreatedAt]
+                                              ,ISNULL(WT.[IsAmountPaid],0) [IsAmountPaid]
+	                                          ,UM.FirstName +' '+ UM.LastName CustomerName
+	                                          ,UM.Email
+	                                          ,WS.ServiceName
+                                          FROM [dbo].[WalletTransaction] WT
+                                          INNER JOIN UserMaster UM ON WT.SenderId=UM.Id
+                                           INNER JOIN WalletService WS ON WT.ServiceCategoryId=WS.Id
+                                            where WT.IsActive=1 and WT.IsDeleted=0 
+												  AND (
+												        (@fromDate IS NULL OR @todate is null) 
+												            OR 
+												        (CONVERT(DATE,UM.CreatedAt) BETWEEN  Convert(Date,@fromDate) AND Convert(Date,@todate))
+											            )
+		                                                AND (
+                                                @searchText='' 
+                                                OR FirstName LIKE('%'+@searchText+'%') OR WT.InvoiceNo LIKE('%'+@searchText+'%')OR WT.TransactionId LIKE('%'+@searchText+'%')
+												OR UM.Email LIKE('%'+@searchText+'%'))
+												 AND (
+												     (@status IS NULL OR @status<0) OR (WT.TransactionStatus=@status)
+											        )
+                                                ORDER BY WT.WalletTransactionId DESC 
+                                                OFFSET @pageSize * (@pageNumber - 1) ROWS 
+                                                FETCH NEXT @pageSize ROWS ONLY OPTION (RECOMPILE);";
+            if (exdbConnection == null)
+            {
+                using (var dbConnection = Connection)
+                {
+                    return (await dbConnection.QueryAsync<GetBillHistoryList>(query,
+                        new
+                        {
+                            fromDate = fromDate,
+                            toDate = toDate,
+                            pageNumber = pageNumber,
+                            pageSize = pageSize,
+                            searchText = searchText,
+                            status = status,
+                            Pendingstatus = pendingemp
+                        })).ToList();
+                }
+            }
+            else
+            {
+                return (await exdbConnection.QueryAsync<GetBillHistoryList>(query,
+                        new
+                        {
+                            fromDate = fromDate,
+                            toDate = toDate,
+                            pageNumber = pageNumber,
+                            pageSize = pageSize,
+                            searchText = searchText,
+                            status = status
+                        })).ToList();
             }
         }
     }

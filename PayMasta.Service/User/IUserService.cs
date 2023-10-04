@@ -1,4 +1,5 @@
-﻿using PayMasta.ViewModel.User;
+﻿using PayMasta.ViewModel.BillHistory;
+using PayMasta.ViewModel.User;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,5 +17,6 @@ namespace PayMasta.Service.User
         Task<MemoryStream> ExportEmployeesListReport(GetEmployeesListRequest request);
         Task<EmployeesReponse> GetEmployeesListForNotification(GetEmployeesListRequest request);
         Task<BlockUnBlockEmployeeResponse> BlockUnBlockEmployer(BlockUnBlockEmployeeRequest request);
+        Task<GetBillHistoryListReponse> GetBillHistoryList(GetBillHistoryListRequest request);
     }
 }

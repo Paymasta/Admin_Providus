@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Account\AccountViewModel.cs" />
     <Compile Include="Account\RequiredAttribute.cs" />
+    <Compile Include="BillHistory\BillHistoryViewModel.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CMSVM\CmsViewModel.cs" />
     <Compile Include="Common\CommonResponse.cs" />

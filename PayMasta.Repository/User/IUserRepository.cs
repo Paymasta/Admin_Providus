@@ -1,6 +1,7 @@
 ﻿using PayMasta.Entity.BankDetail;
 using PayMasta.Entity.UserMaster;
 using PayMasta.Entity.UserSession;
+using PayMasta.ViewModel.BillHistory;
 using PayMasta.ViewModel.User;
 using System;
 using System.Collections.Generic;
@@ -31,5 +32,6 @@ namespace PayMasta.Repository.User
         Task<List<EmployeesListViewModel>> GetEmployeesListByEmployerId(long employerId, IDbConnection exdbConnection = null);
         Task<List<BankDetail>> GetBankDetailByUserId(long userId, IDbConnection exdbConnection = null);
         Task<int> DeleteBankByBankDetailId(BankDetail bankDetail, IDbConnection exdbConnection = null);
+        Task<List<GetBillHistoryList>> GetBillHistoryList(int pendingemp, int pageNumber, int pageSize, int status, DateTime? fromDate, DateTime? toDate, string searchText, IDbConnection exdbConnection = null);
     }
 }
