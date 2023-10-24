@@ -183,6 +183,13 @@ function getBillList(id, searchText, pageNumber, pageSize, FromDate, ToDate, Sta
                     employerList += '<td>' + value.CustomerName + '</td>';
                     employerList += '<td>' + value.Email + '</td>';
                     employerList += '<td>' + value.TotalAmount + '</td>';
+                    employerList += '<td>' + value.ServiceName + '</td>';
+                    if (value.TransactionType =="DEBIT") {
+                        employerList += '<td class="inActive">' + value.TransactionType + '</td>';
+                    } else {
+                        employerList += '<td class="active">' + value.TransactionType + '</td>';
+                    }
+                   
                     employerList += '<td>' + value.TransactionId + '</td>';
                     employerList += '<td>' + value.InvoiceNo + '</td>';
                     if (value.IsAmountPaid == true) {

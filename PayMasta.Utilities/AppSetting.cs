@@ -136,6 +136,7 @@ namespace PayMasta.Utilities
         public static string ExpressWalletPublicKey = ConfigurationManager.AppSettings["ExpressWalletPublicKey"];
         public static string ExpressWalletCredit = ConfigurationManager.AppSettings["ExpressWalletCredit"];
         public static string ExpressWalletBaseUrl = ConfigurationManager.AppSettings["ExpressWalletBaseUrl"];
+        public static string PayMastaBalanceUrl = ConfigurationManager.AppSettings["PayMastaBalanceUrl"];
     }
 
     public static class AggregatorySTATUSCODES

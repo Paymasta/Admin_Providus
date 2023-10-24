@@ -267,14 +267,20 @@ namespace PayMasta.Service.Account
             using (var dbConnection = Connection)
             {
                 var user = await _accountRepository.GetUserByGuid(userGuid, dbConnection);
-                var virtualAccountDetail = await _accountRepository.GetVirtualAccountDetailByUserId(user.Id);
-                var authenticateResponse = await _thirdParty.GetVirtualAccount(virtualAccountDetail.AuthToken, AppSetting.CurrentBalanceAndNuban.ToString() + "/" + virtualAccountDetail.PhoneNumber + "/" + AppSetting.schemeId);
-                if (authenticateResponse != null)
-                {
-                    var JsonResult = JsonConvert.DeserializeObject<dynamic>(authenticateResponse);
-                    result.CurrentBalance = JsonResult[0].actualBalance.ToString("0.00");
-                }
+                //var virtualAccountDetail = await _accountRepository.GetVirtualAccountDetailByUserId(user.Id);
+                //var authenticateResponse = await _thirdParty.GetVirtualAccount(virtualAccountDetail.AuthToken, AppSetting.CurrentBalanceAndNuban.ToString() + "/" + virtualAccountDetail.PhoneNumber + "/" + AppSetting.schemeId);
+                //if (authenticateResponse != null)
+                //{
+                //    var JsonResult = JsonConvert.DeserializeObject<dynamic>(authenticateResponse);
+                //    result.CurrentBalance = JsonResult[0].actualBalance.ToString("0.00");
+                //}
 
+                var balance = await _thirdParty.GetVirtualAccount(AppSetting.ExpressWalletSecretKey, AppSetting.ExpressWalletBaseUrl + AppSetting.PayMastaBalanceUrl);
+                if (balance != null)
+                {
+                    var JsonResult = JsonConvert.DeserializeObject<dynamic>(balance);
+                    result.CurrentBalance = JsonResult.data.availableBalance.ToString("0.00");
+                }
                 if (user != null)
                 {
                     result.UserGuid = user.Guid;
